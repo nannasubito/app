@@ -120,7 +120,7 @@ details p{margin:0 0 14px;color:var(--suave);font-size:15.5px}
 /* ===== Acesso: vem da PASTA do link de cada compra e se soma ao que o aparelho já guardou. ===== */
 const RAIZ = '../';
 const ACESSO_PASTA = ["base", "consulente"];
-const CHECKOUT = { seno: '#', lettino: '#', orologio: '#', consulente: '#' };
+const CHECKOUT = { seno: 'https://pay.hotmart.com/R108290415K?checkoutMode=10', lettino: 'https://pay.hotmart.com/O108290587G?checkoutMode=10', orologio: 'https://pay.hotmart.com/W108290592I?checkoutMode=10', consulente: 'https://pay.hotmart.com/F108290595O?checkoutMode=10' };
 const LS = {
   ler: (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch (e) { return d; } },
   gravar: (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
