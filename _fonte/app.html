@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#d3eafa">
+<title>Nanna Subito</title>
+<link rel="icon" type="image/png" sizes="32x32" href="__RAIZ__img/icones/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="__RAIZ__img/icones/apple-touch-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Nanna Subito">
+<style>
+:root{--fundo:#eef6fc;--fundo2:#d3eafa;--cartao:#fff;--tinta:#1b2f4a;--suave:#4a6079;--linha:#d5e6f3;--forte:#2a6fae;--forte2:#1f5689;--azul2:#e4f2fc;--lua:#f4c86a;--lua2:#fdf3dc;--verde:#2f8a6b;--verde2:#e3f2ec;--alerta:#a5402c;--alerta2:#f9e4de}
+body.notte{--fundo:#121a30;--fundo2:#18223e;--cartao:#1e2a4c;--tinta:#e8eefa;--suave:#a6b3d1;--linha:#2c3a63;--forte:#7fb8ea;--forte2:#a9d0f2;--azul2:#24345e;--lua2:#3a3a52;--verde2:#21413a;--alerta2:#4a2a2a}
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--fundo);color:var(--tinta)}
+body{font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100dvh;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);background:linear-gradient(180deg,var(--fundo2) 0,var(--fundo) 240px) no-repeat,var(--fundo);transition:background .3s,color .3s}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+input,select{font:inherit;color:var(--tinta);background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:14px;width:100%}
+a{color:inherit}
+.tela{max-width:480px;margin:0 auto;padding:16px 18px 44px}
+h1{font-size:27px;line-height:1.2;letter-spacing:-.01em}
+h2{font-size:21px;line-height:1.25}
+p{margin-top:8px}
+.suave{color:var(--suave)}.pq{font-size:14.5px}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.marca{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px}
+.marca img{width:34px;height:34px;border-radius:9px}
+.voltar{display:flex;align-items:center;gap:4px;font-weight:700;color:var(--forte);padding:6px 0}
+.voltar svg{width:20px;height:20px}
+.redondo{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--cartao);border:1px solid var(--linha)}
+.redondo svg{width:22px;height:22px}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:20px;padding:18px;margin-top:14px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:60px;border-radius:18px;font-weight:800;font-size:18px;text-decoration:none;margin-top:14px;text-align:center}
+.btn svg{width:22px;height:22px}
+.prim{background:var(--forte);color:#fff}
+body.notte .prim{color:#10203a}
+.sec{background:var(--azul2);color:var(--forte2)}
+.linha{border:1.5px solid var(--linha);color:var(--tinta)}
+.etiq{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--forte)}
+.grade{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.tile{display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-height:112px;padding:16px;border-radius:20px;background:var(--cartao);border:1px solid var(--linha);font-weight:800;font-size:17px}
+.tile svg{width:30px;height:30px;color:var(--forte)}
+.ill{width:46px;height:46px;object-fit:contain;display:block}
+.extra .ic .ill{width:36px;height:36px}
+.ilus .ill{width:96px;height:96px}
+.check b.com-ic{display:flex;align-items:center;gap:10px}.com-ic .ill{width:34px;height:34px;flex:none}
+.cab{display:flex;align-items:center;gap:10px}.cab .ill{width:38px;height:38px}
+.tile small{display:block;font-weight:600;font-size:13px;color:var(--suave)}
+.tile.on{background:var(--azul2);border:2px solid var(--forte)}
+
+.extra{display:flex;align-items:center;gap:12px;width:100%;padding:14px;border-radius:18px;background:var(--cartao);border:1px solid var(--linha);margin-top:10px}
+.extra .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--azul2);color:var(--forte);flex:none}
+.extra .ic svg{width:24px;height:24px}
+.extra b{display:block}.extra small{display:block;color:var(--suave);font-size:14px}
+.extra .fim{margin-left:auto;color:var(--suave)}.extra .fim svg{width:20px;height:20px}
+.cadeado{font-size:13px;font-weight:800;color:#8a5a12;background:var(--lua2);border-radius:999px;padding:4px 10px;white-space:nowrap}
+body.notte .cadeado{color:var(--lua)}
+.pontos{display:flex;gap:6px;margin:4px 0 6px}
+.pontos i{flex:1;height:6px;border-radius:3px;background:var(--linha)}
+.pontos i.f{background:var(--forte)}
+.ilus{margin:22px auto 6px;width:148px;height:148px;border-radius:50%;background:var(--azul2);display:grid;place-items:center;color:var(--forte)}
+.ilus svg{width:70px;height:70px}
+.centro{text-align:center}
+.tempo{font-size:42px;font-weight:800;margin-top:10px;font-variant-numeric:tabular-nums}
+.check{list-style:none;padding:0;margin-top:6px}
+.check li{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--linha)}
+.check li:last-child{border-bottom:0}
+.check .cx{width:28px;height:28px;border-radius:9px;border:2px solid var(--linha);display:grid;place-items:center;color:#fff}
+.check li.f .cx{background:var(--verde);border-color:var(--verde)}
+.check .cx svg{width:18px;height:18px}
+.check b{display:block}.check p{margin-top:3px;font-size:15.5px;color:var(--suave)}
+.passos{list-style:none;padding:0;margin-top:12px;display:grid;gap:10px}
+.passos li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;background:var(--cartao);border:1px solid var(--linha);border-radius:18px;padding:13px 14px;font-size:16.5px}
+.passos li b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--azul2);color:var(--forte);font-size:17px}
+.passos li h3{font-size:17px}.passos li p{margin-top:2px;font-size:15.5px;color:var(--suave)}
+.alerta{background:var(--alerta2);border-radius:16px;padding:14px;margin-top:14px;font-size:15px}
+.alerta b{color:var(--alerta)}
+body.notte .alerta b{color:#f0a493}
+.player{text-align:center}
+.onda{display:flex;align-items:center;justify-content:center;gap:5px;height:64px;margin:10px 0}
+.onda i{width:6px;border-radius:3px;background:var(--forte);height:10px;transition:height .4s}
+.onda.viva i{animation:ond 1.6s ease-in-out infinite}
+@keyframes ond{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.4)}}
+.notti{display:flex;justify-content:space-between;margin-top:14px}
+.notti i{width:38px;height:38px;border-radius:50%;border:2px solid var(--linha);display:grid;place-items:center;font-style:normal;font-weight:800;color:var(--suave)}
+.notti i.f{background:var(--verde);border-color:var(--verde);color:#fff}
+.notti i.on{border-color:var(--forte);color:var(--forte);box-shadow:0 0 0 4px var(--azul2)}
+.opcao{display:block;width:100%;padding:15px 16px;border-radius:16px;border:1.5px solid var(--linha);background:var(--cartao);margin-top:10px}
+.opcao b{display:block}.opcao small{display:block;color:var(--suave);font-size:14px;margin-top:2px}
+.opcao.on{border-color:var(--forte);background:var(--azul2)}
+.inst{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px 14px;border-radius:16px;background:var(--azul2)}
+.inst b{display:block;font-size:15.5px}.inst small{font-size:13.5px;color:var(--suave)}
+.inst .btn{width:auto;min-height:42px;padding:0 16px;margin:0 0 0 auto;font-size:15px}
+.folha-fundo{position:fixed;inset:0;background:rgba(10,20,40,.45);display:flex;align-items:flex-end;z-index:10}
+.folha{width:100%;max-width:480px;margin:0 auto;background:var(--fundo);border-radius:24px 24px 0 0;padding:22px 18px calc(22px + env(safe-area-inset-bottom))}
+.tabela{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+.tabela td{padding:8px 4px;border-bottom:1px solid var(--linha)}
+.tabela tr.on td{font-weight:800;color:var(--forte)}
+.risultato{font-size:30px;font-weight:800;color:var(--forte);margin-top:6px}
+details{border-bottom:1px solid var(--linha)}
+summary{list-style:none;cursor:pointer;font-weight:700;padding:14px 26px 14px 0;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:2px;top:10px;font-size:22px;color:var(--suave);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 14px;color:var(--suave);font-size:15.5px}
+.scuro{position:fixed;inset:0;background:#000;color:#3a4566;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:15px}
+.rodape{font-size:13px;color:var(--suave);text-align:center;margin-top:26px}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<audio id="audio" loop preload="none"></audio>
+<script src="__RAIZ__conteudo.js"></script>
+<script>
+/* ===== Acesso: vem da PASTA do link de cada compra e se soma ao que o aparelho já guardou. ===== */
+const RAIZ = '__RAIZ__';
+const ACESSO_PASTA = __ACESSO__;
+const CHECKOUT = { seno: '__CK_SENO__', lettino: '__CK_LETTINO__', orologio: '__CK_OROLOGIO__', consulente: '__CK_CONSULENTE__' };
+const LS = {
+  ler: (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch (e) { return d; } },
+  gravar: (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+let ACESSO = [...new Set([...LS.ler('ns_acesso', []), ...ACESSO_PASTA])];
+LS.gravar('ns_acesso', ACESSO);
+const tem = x => ACESSO.includes(x);
+const C = CONTEUDO;
+const hoje = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+
+/* estado salvo no aparelho; nada vai para nenhum servidor */
+const E = Object.assign({ nome: '', mesi: null, quando: null, partenza: null, stanza: [], notte: 1, pendente: false, fatta: null, seno: 1, senoPend: false, diario: [], notturno: false, suono: 'pancia' }, LS.ler('ns_stato', {}));
+const salvar = () => LS.gravar('ns_stato', E);
+let T = { tela: 'home' };
+
+/* idade em meses: o que ela disse no começo, mais os meses que passaram desde então */
+function eta() {
+  if (E.mesi == null) return null;
+  const a = new Date(E.quando), b = new Date();
+  return E.mesi + Math.max(0, (b.getFullYear() - a.getFullYear()) * 12 + b.getMonth() - a.getMonth() - (b.getDate() < a.getDate() ? 1 : 0));
+}
+const piccolo = () => (eta() ?? 6) < 4;
+const bimbo = () => E.nome || 'il tuo bimbo';
+const fm = m => m < 60 ? m + ' min' : Math.floor(m / 60) + 'h' + (m % 60 ? String(m % 60).padStart(2, '0') : '');
+const mmss = s => Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+const hhmm = m => { m = ((m % 1440) + 1440) % 1440; return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0'); };
+
+/* ===== ícones ===== */
+const I = {
+  lua: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z"/></svg>',
+  sole: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+  onda: '<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M2 12h2M6 8v8M10 5v14M14 8v8M18 10v4M22 12h0"/></svg>',
+  sos: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 7v5l3 2"/></svg>',
+  casa: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>',
+  lettino: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4v17M21 4v17M3 9h18M3 17h18M7 9v8M11 9v8M15 9v8M19 9v8"/></svg>',
+  seno: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v3l-2 3v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V9l-2-3V3M8 13h8"/></svg>',
+  orologio: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>',
+  consulente: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>',
+  dir: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>',
+  esq: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>',
+  ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  play: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>',
+  stop: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>',
+  pancia: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.4-9.3C1.2 8.1 3.3 4.5 7 4.5c2 0 3.6 1.1 5 2.8 1.4-1.7 3-2.8 5-2.8 3.7 0 5.8 3.6 4.4 7.2C19.5 16.4 12 21 12 21z"/></svg>',
+  phon: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 6.5A4.5 4.5 0 0 1 7.5 2H17l4 2.5v3L17 10h-3.2l-1.3 5.5a1.6 1.6 0 0 1-1.6 1.2H9.2L10.5 10h-3A4.5 4.5 0 0 1 3 6.5zm4.5-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM9 19h3v3H9z"/></svg>',
+  aspira: '<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M6 2v13M6 15h7a4 4 0 0 1 4 4v1H5a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2zM14 9l6 2"/></svg>',
+  pioggia: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.5 14A4.5 4.5 0 0 1 6 5.03 6 6 0 0 1 17.6 6.5 3.8 3.8 0 0 1 17.5 14z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M8 17l-1 3M12 17l-1 3M16 17l-1 3"/></svg>',
+  nota: '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M9 18.5a3 3 0 1 1-2-2.83V5l12-2v12.5a3 3 0 1 1-2-2.83V6.4l-8 1.33z"/></svg>',
+  sh: '<svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M4 9c3 0 3 6 6 6M9 7c4 0 4 10 8 10M15 6c3 0 3 3 5 3"/></svg>'
+};
+const SUONI = [
+  { id: 'pancia', nome: 'Pancia', sotto: 'Il battito, come prima di nascere', ic: 'pancia' },
+  { id: 'rumore-bianco', nome: 'Rumore bianco', sotto: 'Un fruscio morbido', ic: 'rumore' },
+  { id: 'pioggia', nome: 'Pioggia', sotto: 'Pioggia leggera', ic: 'pioggia' },
+  { id: 'ninna-1', nome: 'Ninna nanna', sotto: 'Dolce e lenta', ic: 'ninna' },
+  { id: 'ninna-2', nome: 'Ninna nanna 2', sotto: "Un'altra melodia", ic: 'ninna' },
+  { id: 'ninna-cascata', nome: 'Ninna nanna e acqua', sotto: 'Con il suono di una cascata', ic: 'cascata' }
+];
+const IC = n => `<img class="ill" src="${RAIZ}img/ic/${n}.png" alt="">`;
+const PAC = C.pacchetti;
+const ICP = { seno: IC('seno'), lettino: IC('lettino'), orologio: IC('orologio'), consulente: IC('consulente') };
+const ICS = { buio: 'luce', fresca: 'fresca', culla: 'culla', pancia: 'schiena', telefono: 'telefono', silenzio: 'schermi' };
+
+/* ===== som: <audio loop> com WAV (sem o silêncio do MP3 na volta). O elemento de áudio segue tocando com a tela
+   bloqueada, o que a Web Audio não garante no iPhone. ===== */
+const audio = document.getElementById('audio');
+let tocando = false;
+function suonaPlay(id) {
+  E.suono = id; salvar();
+  const src = RAIZ + 'suoni/' + id + '.wav';
+  if (!audio.src.endsWith(src.replace(RAIZ, ''))) audio.src = src;
+  audio.volume = 0.5;
+  audio.play().then(() => { tocando = true; render(); }).catch(() => { tocando = false; render(); });
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({ title: SUONI.find(s => s.id === id).nome, artist: 'Nanna Subito', artwork: [{ src: RAIZ + 'img/icones/icone-512.png', sizes: '512x512', type: 'image/png' }] });
+    navigator.mediaSession.setActionHandler('play', () => suonaPlay(E.suono));
+    navigator.mediaSession.setActionHandler('pause', suonaStop);
+  }
+}
+function suonaStop() { audio.pause(); tocando = false; render(); }
+
+/* ===== telas ===== */
+const app = document.getElementById('app');
+const marca = () => `<div class="marca"><img src="${RAIZ}img/icones/icone-192.png" alt="">Nanna Subito</div>`;
+const voltar = (para = 'home') => `<button class="voltar" data-a="ir" data-t="${para}">${I.esq}Indietro</button>`;
+const toggleNotte = () => `<button class="redondo" data-a="notte" aria-label="Modalità notte">${E.notturno ? I.sole : I.lua}</button>`;
+
+function telaTrancado() {
+  return `${marca()}<div class="cartao"><h2>Apri dal link dell'email</h2>
+  <p>Il tuo accesso si apre dal link che hai ricevuto per email dopo l'acquisto. È quel link che sblocca l'app su questo telefono.</p>
+  <p class="suave pq">Non trovi l'email? Controlla anche nella cartella spam o promozioni.</p></div>`;
+}
+
+function telaBenvenuto() {
+  if (!T.passo) {
+    return `<div class="centro"><img src="${RAIZ}img/icones/icone-512.png" alt="" style="width:112px;height:112px;margin:8px auto 0;display:block"></div><h1 style="margin-top:14px;text-align:center">Ciao!</h1>
+    <p class="suave">Due domande, così il rituale e il piano sono giusti per il tuo bimbo.</p>
+    <div class="cartao"><label><b>Come si chiama?</b> <span class="suave pq">(facoltativo)</span><input id="nome" maxlength="20" autocomplete="off" value="${E.nome}" style="margin-top:8px"></label>
+    <label style="display:block;margin-top:16px"><b>Quanti mesi ha?</b>
+    <select id="mesi" style="margin-top:8px">${Array.from({ length: 25 }, (_, i) => `<option value="${i}"${(E.mesi ?? 6) === i ? ' selected' : ''}>${i === 0 ? 'Meno di 1 mese' : i + (i === 1 ? ' mese' : ' mesi')}</option>`).join('')}</select></label></div>
+    <button class="btn prim" data-a="benv-1">Avanti</button>`;
+  }
+  return `${marca()}<h1 style="margin-top:8px">Adesso, come si addormenta?</h1>
+  <p class="suave">Il piano parte da qui.</p>
+  ${Object.entries(C.piano.partenze).map(([k, v]) => `<button class="opcao" data-a="partenza" data-p="${k}"><b>${v}</b></button>`).join('')}`;
+}
+
+function instalarBloco() {
+  if (matchMedia('(display-mode: standalone)').matches || navigator.standalone) return '';
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  if (window.__prompt) return `<div class="inst"><span><b>Mettila sulla schermata Home</b><small>Si apre come un'app, anche senza internet</small></span><button class="btn prim" data-a="instalar">Aggiungi</button></div>`;
+  if (ios) return `<div class="inst"><span><b>Mettila sulla schermata Home</b><small>Tocca Condividi e poi Aggiungi alla schermata Home</small></span></div>`;
+  return '';
+}
+
+function blocoPiano() {
+  if (piccolo()) return `<div class="cartao"><span class="etiq">Piano 7 notti</span><p>${C.piano.piccoli}</p></div>`;
+  if (E.notte > 7) return `<div class="cartao"><span class="etiq">Piano 7 notti</span><h2 style="margin-top:6px">Fatto, 7 notti su 7</h2><p class="suave">Tieni lo stesso rituale ogni sera. Se una notte va storta, riparti dalla notte 5.</p><button class="btn linha" data-a="ir" data-t="piano">Rivedi il piano</button></div>`;
+  return `<div class="cartao"><div class="cab">${IC('piano')}<span class="etiq">Piano 7 notti</span></div><h2 style="margin-top:6px">${E.pendente ? "Com'è andata stanotte?" : 'Notte ' + E.notte + ' di 7'}</h2>
+  <p class="suave">${E.pendente ? 'Rispondi e ti diciamo cosa fare stasera.' : 'Stasera: ' + C.piano.notti[E.partenza][E.notte - 1].split('. ')[0] + '.'}</p>
+  <button class="btn sec" data-a="ir" data-t="piano">${E.pendente ? 'Rispondi' : 'Apri la notte di stasera'}</button></div>`;
+}
+
+function telaHome() {
+  const extra = id => `<button class="extra" data-a="pacchetto" data-p="${id}"><span class="ic">${ICP[id]}</span><span><b>${PAC[id].nome}</b><small>${PAC[id].sotto}</small></span><span class="fim">${tem(id) ? I.dir : `<span class="cadeado">${PAC[id].prezzo}</span>`}</span></button>`;
+  const stanzaOk = E.stanza.length >= C.stanza.voci.length;
+  return `<div class="topo">${marca()}${toggleNotte()}</div>
+  <h1>È ora della nanna${E.nome ? ', ' + E.nome : ''}?</h1>
+  <p class="suave">Stanotte: ${stanzaOk ? '' : 'prepara la stanza, poi '}il rituale, poi il suono.</p>
+  ${stanzaOk ? '' : `<button class="extra" data-a="ir" data-t="stanza" style="border-color:var(--forte)"><span class="ic">${IC('luce')}</span><span><b>Prepara la stanza</b><small>${E.stanza.length} di ${C.stanza.voci.length} fatte · si fa una volta</small></span><span class="fim">${I.dir}</span></button>`}
+  <button class="btn prim" data-a="rituale">${I.lua}Inizia il rituale</button>
+  <div class="grade">
+   <button class="tile${tocando ? ' on' : ''}" data-a="ir" data-t="suoni">${IC('rumore')}<span>Suoni<small>${tocando ? 'in riproduzione' : 'non si fermano'}</small></span></button>
+   <button class="tile" data-a="ir" data-t="sos">${IC('sos')}<span>SOS 3:00<small>si è svegliato</small></span></button>
+  </div>
+  ${blocoPiano()}
+  ${instalarBloco()}
+  <h2 style="margin-top:26px">Per le notti che vengono</h2>
+  ${['seno', 'lettino', 'orologio', 'consulente'].map(extra).join('')}
+  ${stanzaOk ? `<button class="extra" data-a="ir" data-t="stanza"><span class="ic">${IC('luce')}</span><span><b>La stanza</b><small>Luce, temperatura, culla</small></span><span class="fim">${I.dir}</span></button>` : ''}
+  <button class="extra" data-a="ir" data-t="profilo"><span class="ic">${IC('schiena')}</span><span><b>${bimbo() === 'il tuo bimbo' ? 'Il tuo bimbo' : E.nome}</b><small>${eta() ?? '?'} mesi · cambia età o partenza</small></span><span class="fim">${I.dir}</span></button>
+  <p class="rodape">Nanna Subito non sostituisce il pediatra.</p>`;
+}
+
+function telaStanza() {
+  return `<div class="topo">${voltar()}${toggleNotte()}</div>
+  <h1>${C.stanza.titolo}</h1><p class="suave">${C.stanza.sotto} Tocca ogni voce quando è fatta.</p>
+  <div class="cartao"><ul class="check">${C.stanza.voci.map(v => `<li class="${E.stanza.includes(v.id) ? 'f' : ''}" data-a="stanza" data-v="${v.id}"><span class="cx">${E.stanza.includes(v.id) ? I.ok : ''}</span><div><b class="com-ic">${IC(ICS[v.id])}${v.nome}</b><p>${v.testo}</p></div></li>`).join('')}</ul></div>
+  ${E.stanza.length >= C.stanza.voci.length ? `<button class="btn prim" data-a="rituale">${I.lua}Stanza pronta, inizia il rituale</button>` : ''}`;
+}
+
+function telaRituale() {
+  const passi = C.rituale[piccolo() ? 'piccoli' : 'grandi'], i = T.i || 0, p = passi[i];
+  return `<div class="topo">${voltar()}<b>${i + 1} di ${passi.length}</b></div>
+  <div class="pontos">${passi.map((_, k) => `<i class="${k <= i ? 'f' : ''}"></i>`).join('')}</div>
+  <div class="centro"><div class="ilus">${IC(i === passi.length - 1 ? 'rumore' : 'rituale')}</div>
+  <h1>${p.titolo}</h1><p class="suave" style="font-size:18px">${p.testo}</p>
+  ${p.sec ? `<div class="tempo" id="crono">${mmss(T.resta ?? p.sec)}</div>` : ''}</div>
+  ${i === passi.length - 1
+    ? `<button class="btn prim" data-a="fine-rituale">${I.play}Accendi il suono</button>`
+    : `<button class="btn prim" data-a="avanti">Avanti</button>`}`;
+}
+
+function telaSuoni() {
+  const s = SUONI.find(x => x.id === E.suono) || SUONI[0];
+  return `<div class="topo">${voltar()}${toggleNotte()}</div>
+  <div class="cartao player"><span class="etiq">${tocando ? 'In riproduzione' : 'Pronto'}</span><h2 style="margin-top:4px">${s.nome}</h2>
+  <div class="onda${tocando ? ' viva' : ''}">${[18, 34, 52, 40, 62, 30, 48, 62, 38, 24, 44, 56, 32, 20].map((h, k) => `<i style="height:${h}px;animation-delay:${k * .11}s"></i>`).join('')}</div>
+  <p class="suave pq">Non si ferma finché non lo spegni tu.</p>
+  ${tocando ? `<button class="btn linha" data-a="stop">${I.stop}Spegni</button><button class="btn sec" data-a="scuro">${I.lua}Schermo nero</button>` : `<button class="btn prim" data-a="play" data-s="${s.id}">${I.play}Accendi</button>`}</div>
+  <div class="grade">${SUONI.map(x => `<button class="tile${x.id === E.suono ? ' on' : ''}" data-a="play" data-s="${x.id}">${IC(x.ic)}<span>${x.nome}<small>${x.sotto}</small></span></button>`).join('')}</div>
+  <div class="alerta"><b>Volume basso, telefono lontano.</b> Abbassa il volume con i tasti del telefono e appoggialo dall'altra parte della stanza, mai nella culla.</div>`;
+}
+
+function telaSos() {
+  const lista = C.sos[piccolo() ? 'piccoli' : 'grandi'];
+  return `<div class="topo">${voltar()}${toggleNotte()}</div>
+  <h1>Si è svegliato?</h1><p class="suave">Fai così, ${piccolo() ? 'con calma' : 'senza tirarlo fuori dal lettino'}.</p>
+  <ul class="passos">${lista.map((t, k) => `<li><b>${k + 1}</b><span>${t}</span></li>`).join('')}</ul>
+  ${tocando ? '' : `<button class="btn sec" data-a="play" data-s="${E.suono}">${I.onda}Riaccendi il suono</button>`}
+  <button class="btn prim" data-a="ir" data-t="home">Fatto, si è riaddormentato</button>
+  <div class="alerta">${C.sos.allarme}</div>`;
+}
+
+function telaPiano() {
+  if (piccolo()) return `<div class="topo">${voltar()}</div><h1>Piano 7 notti</h1><div class="cartao"><p>${C.piano.piccoli}</p></div>`;
+  const notti = C.piano.notti[E.partenza], n = Math.min(E.notte, 7);
+  const bolas = Array.from({ length: 7 }, (_, k) => `<i class="${k + 1 < E.notte || (k + 1 === E.notte && E.pendente) ? 'f' : ''}${k + 1 === n && !E.pendente && E.notte <= 7 ? ' on' : ''}">${k + 1}</i>`).join('');
+  if (E.pendente) {
+    return `<div class="topo">${voltar()}</div><h1>Com'è andata stanotte?</h1><div class="notti">${bolas}</div>
+    <button class="opcao" data-a="checkin" data-r="bene"><b>Si è addormentato, anche se ci è voluto un po'</b><small>Stasera si passa alla notte ${E.notte + 1}</small></button>
+    <button class="opcao" data-a="checkin" data-r="difficile"><b>È stata dura, ha pianto tanto</b><small>Stasera si ripete la stessa notte</small></button>`;
+  }
+  if (E.notte > 7) return `<div class="topo">${voltar()}</div><h1>7 notti su 7</h1><div class="notti">${bolas}</div><div class="cartao"><p>Tieni lo stesso rituale ogni sera. Se una notte va storta, riparti dalla notte 5.</p><button class="btn linha" data-a="ripeti5">Riparti dalla notte 5</button></div>`;
+  return `<div class="topo">${voltar()}<span class="suave pq">${C.piano.partenze[E.partenza]}</span></div>
+  <h1>Notte ${n} di 7</h1><div class="notti">${bolas}</div>
+  <div class="cartao"><span class="etiq">Stasera</span><p style="font-size:18px">${notti[n - 1]}</p></div>
+  <p class="suave pq" style="margin-top:12px">Prima, sempre il rituale e il suono. Nessuno piange da solo: se piange forte, lo prendi, lo calmi e riprovi.</p>
+  <button class="btn prim" data-a="notte-fatta">È a nanna, domani ti dico com'è andata</button>`;
+}
+
+function telaPacchetto(id) {
+  const k = PAC[id];
+  if (!tem(id)) return telaHome();
+  if (id === 'seno') {
+    const n = Math.min(E.seno, 7);
+    return `<div class="topo">${voltar()}</div><h1>${k.nome}</h1><p class="suave">${k.sotto}</p>
+    <div class="notti">${Array.from({ length: 7 }, (_, j) => `<i class="${j + 1 < E.seno ? 'f' : ''}${j + 1 === n && E.seno <= 7 ? ' on' : ''}">${j + 1}</i>`).join('')}</div>
+    <div class="cartao"><span class="etiq">${E.seno > 7 ? 'Fatto' : 'Stasera, notte ' + n}</span><p style="font-size:18px">${E.seno > 7 ? 'Si addormenta lontano dal latte. Tieni lo stesso ordine ogni sera.' : k.notti[n - 1]}</p></div>
+    ${E.seno <= 7 ? `<button class="btn prim" data-a="seno-avanti">Fatto, domani la notte ${Math.min(n + 1, 7)}</button><button class="btn linha" data-a="ir" data-t="home">Stasera ripeto questa</button>` : ''}
+    <div class="alerta">${k.notte}</div>`;
+  }
+  if (id === 'lettino') {
+    return `<div class="topo">${voltar()}</div><h1>${k.nome}</h1><p class="suave">${k.sotto}</p>
+    <ul class="passos">${k.passi.map((p, j) => `<li><b>${j + 1}</b><div><h3>${p.titolo}</h3><p>${p.testo}</p></div></li>`).join('')}</ul>`;
+  }
+  if (id === 'orologio') {
+    const m = eta() ?? 6, f = k.finestre.find(x => m >= x.mesi[0] && m <= x.mesi[1]) || k.finestre[k.finestre.length - 1];
+    const agora = new Date(), v = T.sveglio || (String(agora.getHours()).padStart(2, '0') + ':' + String(agora.getMinutes()).padStart(2, '0'));
+    const [h, mi] = v.split(':').map(Number), base = h * 60 + mi;
+    return `<div class="topo">${voltar()}</div><h1>${k.nome}</h1><p class="suave">${bimbo()[0].toUpperCase() + bimbo().slice(1)}, ${m} mesi.</p>
+    <div class="cartao"><label><b>Si è svegliato alle</b><input type="time" id="sveglio" value="${v}" style="margin-top:8px"></label>
+    <p class="suave pq" style="margin-top:14px">Prossima nanna tra le</p><div class="risultato">${hhmm(base + f.min)} e le ${hhmm(base + f.max)}</div></div>
+    <p class="suave pq" style="margin-top:12px">${k.segnali} Gli orari sono indicativi: ogni bimbo ha il suo ritmo.</p>
+    <table class="tabela">${k.finestre.map(x => `<tr class="${x === f ? 'on' : ''}"><td>${x.mesi[0] === x.mesi[1] ? x.mesi[0] + ' mesi' : x.mesi[0] + '-' + x.mesi[1] + ' mesi'}</td><td>sveglio da ${fm(x.min)} a ${fm(x.max)}</td></tr>`).join('')}</table>`;
+  }
+  if (id === 'consulente') {
+    const oggi = E.diario.find(d => d.data === hoje());
+    const r = T.r || {};
+    const domanda = (campo, opcoes) => opcoes.map(([v, t]) => `<button class="opcao${r[campo] === v ? ' on' : ''}" data-a="diario" data-c="${campo}" data-v="${v}"><b>${t}</b></button>`).join('');
+    return `<div class="topo">${voltar()}</div><h1>${k.nome}</h1><p class="suave">${k.sotto}</p>
+    ${oggi ? `<div class="cartao"><span class="etiq">Stasera</span><p style="font-size:18px">${k.consigli[oggi.a + '-' + oggi.r]}</p><button class="btn linha" data-a="diario-rifai">Cambia le risposte di oggi</button></div>`
+    : `<div class="cartao"><b>Come si è addormentato ieri sera?</b>${domanda('a', [['facile', 'Abbastanza facile'], ['lungo', 'Ci è voluto tanto'], ['braccio', 'Solo in braccio o al seno']])}
+      <b style="display:block;margin-top:16px">Quante volte si è svegliato?</b>${domanda('r', [['poco', 'Mai, o una volta'], ['medio', '2 o 3 volte'], ['tanti', 'Più di 3 volte']])}</div>`}
+    <h2 style="margin-top:24px">SOS per i momenti difficili</h2>
+    <div class="cartao" style="padding:4px 18px">${k.sos.map(s => `<details><summary>${s.nome}</summary><p>${s.testo}</p></details>`).join('')}</div>`;
+  }
+}
+
+function telaProfilo() {
+  return `<div class="topo">${voltar()}</div><h1>Il tuo bimbo</h1>
+  <div class="cartao"><label><b>Nome</b><input id="nome" maxlength="20" value="${E.nome}" style="margin-top:8px"></label>
+  <label style="display:block;margin-top:14px"><b>Mesi</b><select id="mesi" style="margin-top:8px">${Array.from({ length: 25 }, (_, i) => `<option value="${i}"${eta() === i ? ' selected' : ''}>${i === 0 ? 'Meno di 1 mese' : i + (i === 1 ? ' mese' : ' mesi')}</option>`).join('')}</select></label>
+  <label style="display:block;margin-top:14px"><b>Come si addormenta adesso</b><select id="partenza" style="margin-top:8px">${Object.entries(C.piano.partenze).map(([k, v]) => `<option value="${k}"${E.partenza === k ? ' selected' : ''}>${v}</option>`).join('')}</select></label></div>
+  <button class="btn prim" data-a="salva-profilo">Salva</button>
+  <p class="suave pq" style="margin-top:12px">Se cambi la partenza, il piano ricomincia dalla notte 1.</p>`;
+}
+
+function folhaCadeado(id) {
+  const k = PAC[id], f = document.createElement('div');
+  f.className = 'folha-fundo';
+  f.innerHTML = `<div class="folha"><span class="cadeado">${k.prezzo} · pagamento unico</span><h2 style="margin-top:12px">${k.nome}</h2><p>${k.testo}</p>
+  <a class="btn prim" href="${CHECKOUT[id]}">Sbloccalo a ${k.prezzo}</a><button class="btn linha" data-a="fecha">Non ora</button></div>`;
+  f.addEventListener('click', e => { if (e.target === f || e.target.closest('[data-a="fecha"]')) f.remove(); });
+  document.body.appendChild(f);
+}
+
+/* ===== render e ações ===== */
+let crono = null;
+function render() {
+  document.body.classList.toggle('notte', !!E.notturno);
+  if (!ACESSO.length) { app.innerHTML = `<div class="tela">${telaTrancado()}</div>`; return; }
+  if (E.mesi == null || !E.partenza) { app.innerHTML = `<div class="tela">${telaBenvenuto()}</div>`; return; }
+  const t = T.tela;
+  const html = t === 'stanza' ? telaStanza() : t === 'rituale' ? telaRituale() : t === 'suoni' ? telaSuoni() : t === 'sos' ? telaSos()
+    : t === 'piano' ? telaPiano() : t === 'pacchetto' ? telaPacchetto(T.id) : t === 'profilo' ? telaProfilo() : telaHome();
+  app.innerHTML = `<div class="tela">${html}</div>`;
+  const sv = document.getElementById('sveglio');
+  if (sv) sv.addEventListener('change', () => { T.sveglio = sv.value; render(); });
+}
+function ir(tela, extra = {}) { clearInterval(crono); T = Object.assign({ tela }, extra); render(); scrollTo(0, 0); }
+function iniciarCrono() {
+  clearInterval(crono);
+  const p = C.rituale[piccolo() ? 'piccoli' : 'grandi'][T.i || 0];
+  if (!p.sec) return;
+  T.resta = p.sec;
+  crono = setInterval(() => { T.resta = Math.max(0, T.resta - 1); const el = document.getElementById('crono'); if (el) el.textContent = mmss(T.resta); if (!T.resta) clearInterval(crono); }, 1000);
+}
+
+app.addEventListener('click', e => {
+  const b = e.target.closest('[data-a]'); if (!b) return;
+  const a = b.dataset.a;
+  if (a === 'benv-1') { E.nome = document.getElementById('nome').value.trim(); E.mesi = +document.getElementById('mesi').value; E.quando = hoje(); salvar(); T.passo = 2; render(); }
+  else if (a === 'partenza') { E.partenza = b.dataset.p; salvar(); ir(E.stanza.length ? 'home' : 'stanza'); }
+  else if (a === 'ir') ir(b.dataset.t);
+  else if (a === 'notte') { E.notturno = !E.notturno; salvar(); render(); }
+  else if (a === 'stanza') { const v = b.dataset.v; E.stanza = E.stanza.includes(v) ? E.stanza.filter(x => x !== v) : [...E.stanza, v]; salvar(); render(); }
+  else if (a === 'rituale') { ir('rituale', { i: 0 }); iniciarCrono(); }
+  else if (a === 'avanti') { T.i++; T.resta = undefined; render(); iniciarCrono(); }
+  else if (a === 'fine-rituale') { suonaPlay(E.suono); ir('suoni'); }
+  else if (a === 'play') suonaPlay(b.dataset.s);
+  else if (a === 'stop') suonaStop();
+  else if (a === 'scuro') { const s = document.createElement('div'); s.className = 'scuro'; s.innerHTML = `${I.lua.replace('<svg', '<svg width="40" height="40"')}<span>Il suono continua. Tocca per tornare.</span>`; s.onclick = () => s.remove(); document.body.appendChild(s); }
+  else if (a === 'notte-fatta') { E.pendente = true; E.fatta = hoje(); salvar(); ir('home'); }
+  else if (a === 'checkin') { if (b.dataset.r === 'bene') E.notte++; E.pendente = false; salvar(); render(); }
+  else if (a === 'ripeti5') { E.notte = 5; salvar(); render(); }
+  else if (a === 'pacchetto') { const id = b.dataset.p; if (tem(id)) ir('pacchetto', { id }); else folhaCadeado(id); }
+  else if (a === 'seno-avanti') { E.seno++; salvar(); render(); }
+  else if (a === 'diario') { T.r = Object.assign({}, T.r, { [b.dataset.c]: b.dataset.v }); if (T.r.a && T.r.r) { E.diario = [...E.diario.filter(d => d.data !== hoje()), { data: hoje(), a: T.r.a, r: T.r.r }].slice(-30); salvar(); T.r = {}; } render(); }
+  else if (a === 'diario-rifai') { E.diario = E.diario.filter(d => d.data !== hoje()); salvar(); render(); }
+  else if (a === 'salva-profilo') {
+    E.nome = document.getElementById('nome').value.trim(); const m = +document.getElementById('mesi').value;
+    if (m !== eta()) { E.mesi = m; E.quando = hoje(); }
+    const p = document.getElementById('partenza').value; if (p !== E.partenza) { E.partenza = p; E.notte = 1; E.pendente = false; }
+    salvar(); ir('home');
+  }
+  else if (a === 'instalar' && window.__prompt) { window.__prompt.prompt(); window.__prompt = null; }
+});
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); window.__prompt = e; if (T.tela === 'home') render(); });
+audio.addEventListener('pause', () => { if (tocando) { tocando = false; render(); } });
+render();
+
+/* o service worker guarda o acesso no Cache Storage: atravessa o isolamento do iPhone entre o Safari e o app instalado */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register(RAIZ + 'sw.js', { scope: RAIZ }).then(() => navigator.serviceWorker.ready).then(reg => {
+    const sw = reg.active || navigator.serviceWorker.controller; if (!sw) return;
+    navigator.serviceWorker.addEventListener('message', ev => {
+      const d = ev.data || {}; if (d.tipo !== 'acesso' || !Array.isArray(d.itens)) return;
+      const antes = ACESSO.length; ACESSO = [...new Set([...ACESSO, ...d.itens])]; LS.gravar('ns_acesso', ACESSO);
+      if (ACESSO.length !== antes) render();
+    });
+    sw.postMessage({ tipo: 'gravar-acesso', itens: ACESSO });
+  }).catch(() => {});
+}
+</script>
+</body>
+</html>

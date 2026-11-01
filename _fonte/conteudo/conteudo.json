@@ -1,0 +1,170 @@
+{
+ "_nota": "Conteúdo do app em it-IT. Regras de sono seguro: pancia in su, culla libera, stanza fresca, telefono lontano. Nada de choro controlado. Janelas de vigília são indicativas (D, referências gerais de sono infantil); conferir com fonte antes de citar números na página.",
+ "stanza": {
+  "titolo": "Prepara la stanza",
+  "sotto": "Si fa una volta, prima della prima notte. Poi resta così.",
+  "voci": [
+   {"id": "buio", "nome": "Buio, con una lucina calda", "testo": "Tende chiuse e luce grande spenta. Se ti serve vedere, una lucina calda e bassa, arancione o rossa, lontana dagli occhi del bimbo."},
+   {"id": "fresca", "nome": "Stanza fresca", "testo": "Tra 18 e 20 gradi. Meglio un po' fresca che troppo calda: non coprirlo troppo e niente cappellino per dormire."},
+   {"id": "culla", "nome": "Culla libera", "testo": "Materasso rigido, solo il lenzuolo con gli angoli. Niente cuscini, peluche, paracolpi o coperte sciolte: per coprirlo, un sacco nanna della sua misura."},
+   {"id": "pancia", "nome": "A pancia in su", "testo": "Sempre a pancia in su, nella sua culla o nel suo lettino, per ogni nanna, anche di giorno."},
+   {"id": "telefono", "nome": "Telefono lontano dalla culla", "testo": "Appoggia il telefono dall'altra parte della stanza, mai dentro la culla o sul bordo. Il suono va bene a volume basso: deve coprire i rumori, non coprire te che parli piano."},
+   {"id": "silenzio", "nome": "Schermi spenti", "testo": "Niente TV accesa nella stanza. Il telefono resta in modalità notte, con lo schermo scuro."}
+  ]
+ },
+ "rituale": {
+  "grandi": [
+   {"titolo": "Pannolino e pigiama", "testo": "Pannolino pulito e pigiama, sempre nello stesso ordine. Così il corpo capisce che la giornata è finita.", "sec": 120},
+   {"titolo": "Luce bassa", "testo": "Spegni la luce grande e lascia solo la lucina. Da qui in poi parla piano.", "sec": 60},
+   {"titolo": "Il latte, prima", "testo": "Se prende il latte, daglielo adesso, con la lucina accesa. Il latte arriva prima della nanna, non per addormentarsi.", "sec": 0},
+   {"titolo": "La frase della nanna", "testo": "Una ninna nanna corta e sempre la stessa frase, per esempio: \"È ora della nanna, ti voglio bene.\" Ogni sera uguale.", "sec": 60},
+   {"titolo": "Suono e lettino", "testo": "Accendi il suono a volume basso, con il telefono lontano dalla culla. Mettilo nel lettino a pancia in su, ancora un po' sveglio se ci riesci.", "sec": 0}
+  ],
+  "piccoli": [
+   {"titolo": "Pannolino e pigiama", "testo": "Pannolino pulito e pigiama, sempre nello stesso ordine.", "sec": 120},
+   {"titolo": "Luce bassa", "testo": "Spegni la luce grande e lascia solo la lucina. Da qui in poi parla piano.", "sec": 60},
+   {"titolo": "Latte e coccole", "testo": "Nei primi mesi va benissimo che si addormenti al seno, col biberon o in braccio: in questa età la cosa più importante è calmarlo.", "sec": 0},
+   {"titolo": "Il suono", "testo": "Accendi il suono a volume basso, con il telefono lontano dalla culla. A tanti neonati il suono della pancia o il rumore bianco aiutano a calmarsi.", "sec": 0},
+   {"titolo": "Nella culla", "testo": "Quando dorme bene, con il respiro regolare e le braccia molli, appoggialo nella culla a pancia in su.", "sec": 0}
+  ]
+ },
+ "sos": {
+  "grandi": [
+   "Aspetta un minuto: se si lamenta piano, a volte si riaddormenta da solo.",
+   "Riaccendi il suono, sempre lo stesso.",
+   "Mano sul pancino e \"sh sh\", senza prenderlo in braccio.",
+   "Se piange forte, prendilo, calmalo e rimettilo giù appena è tranquillo.",
+   "Se ha fame, il latte va bene: luce bassa, niente chiacchiere, e di nuovo nel lettino."
+  ],
+  "piccoli": [
+   "Nei primi mesi si sveglia per mangiare: è normale. Luce bassa e niente chiacchiere.",
+   "Dopo il latte, riaccendi il suono, sempre lo stesso.",
+   "Tienilo in braccio finché si calma, poi appoggialo nella culla a pancia in su.",
+   "Se si sveglia appena lo appoggi, mano sul pancino e \"sh sh\" per un minuto."
+  ],
+  "allarme": "Se ha la febbre, respira male, piange in modo diverso dal solito o qualcosa ti preoccupa, non è un risveglio: chiama il pediatra o la guardia medica."
+ },
+ "piano": {
+  "partenze": {
+   "seno": "Si addormenta al seno o col biberon",
+   "braccio": "Si addormenta in braccio o cullato",
+   "accanto": "Si addormenta nel lettino, ma con me accanto",
+   "lettone": "Si addormenta nel lettone con noi"
+  },
+  "notti": {
+   "seno": [
+    "Il latte si sposta all'inizio del rituale, con la lucina accesa. Se si addormenta mentre mangia, va bene: stasera conta solo l'ordine nuovo.",
+    "Stacca il seno o il biberon quando rallenta a succhiare, prima che dorma. Se protesta, cullalo in braccio finché è sonnolento.",
+    "Dal latte direttamente in braccio, poi nel lettino ancora sonnolento. Mano sul pancino e suono acceso.",
+    "Nel lettino sonnolento, mano sul pancino e \"sh sh\". Se piange forte, prendilo, calmalo e riprova.",
+    "Mano sul pancino che si alleggerisce: prima ferma, poi solo appoggiata. Tu resti seduta accanto.",
+    "Seduta accanto al lettino, senza toccarlo. Se si agita, la tua voce: la frase della nanna, piano.",
+    "Frase della nanna, suono acceso, e resti nella stanza solo finché si calma. Se piange, torni e lo rassicuri."
+   ],
+   "braccio": [
+    "Rituale completo e suono acceso. Cullalo come sempre, ma stasera fermati quando è sonnolento, prima che dorma del tutto.",
+    "Cullalo meno: tienilo in braccio fermo, con il suono, finché è sonnolento.",
+    "Nel lettino quasi addormentato. Mano sul pancino e \"sh sh\" finché si addormenta.",
+    "Nel lettino sonnolento, ma più sveglio di ieri. Mano sul pancino. Se piange forte, prendilo, calmalo e riprova.",
+    "Mano sul pancino che si alleggerisce: prima ferma, poi solo appoggiata. Tu resti seduta accanto.",
+    "Seduta accanto al lettino, senza toccarlo. Se si agita, la tua voce: la frase della nanna, piano.",
+    "Frase della nanna, suono acceso, e resti nella stanza solo finché si calma. Se piange, torni e lo rassicuri."
+   ],
+   "accanto": [
+    "Rituale completo e suono acceso. Resta accanto come sempre, ma senza parlare troppo: solo la frase della nanna.",
+    "Accanto al lettino, ma senza tenergli la mano: mano sul pancino solo se si agita.",
+    "La sedia si sposta di un passo verso la porta.",
+    "La sedia a metà stanza. Se si agita, la tua voce, piano.",
+    "La sedia vicino alla porta.",
+    "Frase della nanna, suono acceso, ed esci. Se piange, torni subito, lo rassicuri e riesci.",
+    "Frase della nanna, suono acceso, ed esci. Torni ogni volta che serve: nessuno piange da solo."
+   ],
+   "lettone": [
+    "Il rituale si fa nella sua stanza o vicino al suo lettino, con il suono acceso. Stasera può ancora addormentarsi nel lettone.",
+    "Si addormenta nel lettone, poi lo sposti nel suo lettino quando dorme bene, con il suono acceso vicino.",
+    "Si addormenta in braccio accanto al suo lettino, e ci va appena è sonnolento. Mano sul pancino.",
+    "Nel lettino sonnolento, mano sul pancino e \"sh sh\". Se piange forte, prendilo, calmalo e riprova.",
+    "Mano sul pancino che si alleggerisce. Tu resti seduta accanto.",
+    "Seduta accanto al lettino, senza toccarlo. Se si agita, la tua voce, piano.",
+    "Frase della nanna, suono acceso, e resti nella stanza solo finché si calma. Se piange, torni e lo rassicuri."
+   ]
+  },
+  "piccoli": "Sotto i 4 mesi il piano delle 7 notti non serve ancora: in questa età si addormenta come può, e va bene. Usa il rituale, i suoni e l'SOS. Il piano si apre da solo quando compie 4 mesi."
+ },
+ "pacchetti": {
+  "seno": {
+   "nome": "Senza seno",
+   "sotto": "Si addormenta senza attaccarsi",
+   "prezzo": "9,90 €",
+   "testo": "Il piano notte per notte per farlo addormentare senza attaccarsi al seno o al biberon, senza pianti. Continui ad allattare quando vuoi.",
+   "notti": [
+    "Stasera solo osservi: segna a che punto della poppata rallenta e comincia a chiudere gli occhi.",
+    "Il latte va all'inizio del rituale, con la lucina accesa, non alla fine.",
+    "Quando rallenta a succhiare, stacca piano. Se cerca il seno, rimettilo per un attimo e riprova dopo un minuto.",
+    "Stacca prima, appena rallenta. Poi in braccio, con il suono, finché è sonnolento.",
+    "Dopo il latte, un passaggio in più: pannolino o la frase della nanna. Così il latte non è più l'ultima cosa.",
+    "Nel lettino sonnolento, mano sul pancino. Se piange forte, prendilo, calmalo e riprova.",
+    "Latte, frase della nanna, suono, lettino. Il latte è lontano dal momento in cui si addormenta."
+   ],
+   "notte": "Di notte, se si sveglia e ha fame, il latte va bene. Prima di togliere le poppate notturne senti il pediatra: dipende dall'età e da come cresce."
+  },
+  "lettino": {
+   "nome": "Nel lettino",
+   "sotto": "Resta nel lettino quando lo appoggi",
+   "prezzo": "6,90 €",
+   "testo": "Il passaggio dalle braccia al lettino senza che apra gli occhi: come prepararlo, come appoggiarlo e cosa fare se si sveglia nei primi minuti.",
+   "passi": [
+    {"titolo": "Prima, il lettino", "testo": "Suono già acceso e lenzuolo non freddo: tieni la mano sul materasso un minuto prima di appoggiarlo."},
+    {"titolo": "Aspetta il sonno profondo", "testo": "Dopo che si addormenta, aspetta 10-15 minuti: respiro lento e regolare, braccia molli, mano aperta. Se le braccia sono ancora strette, è presto."},
+    {"titolo": "Appoggialo in tre tempi", "testo": "Tienilo vicino al tuo corpo fino all'ultimo. Prima il sedere, poi la schiena, poi la testa. Sempre a pancia in su."},
+    {"titolo": "Le mani restano un minuto", "testo": "Una mano sul pancino e una sulla testa, ferme, per un minuto. Poi togli prima quella sulla testa, piano."},
+    {"titolo": "Se apre gli occhi", "testo": "Non riprenderlo subito: mano sul pancino e \"sh sh\". Se piange forte, prendilo, calmalo e rifai da capo."}
+   ]
+  },
+  "orologio": {
+   "nome": "Orologio della Nanna",
+   "sotto": "Sai sempre quando metterlo a nanna",
+   "prezzo": "4,90 €",
+   "testo": "L'Orologio della Nanna ti dice l'ora del prossimo pisolino e della nanna, in base all'età e all'ultimo risveglio. Se è già troppo stanco, addormentarlo è più difficile.",
+   "finestre": [
+    {"mesi": [0, 1], "min": 35, "max": 60},
+    {"mesi": [2, 2], "min": 60, "max": 90},
+    {"mesi": [3, 3], "min": 75, "max": 105},
+    {"mesi": [4, 5], "min": 105, "max": 135},
+    {"mesi": [6, 7], "min": 120, "max": 180},
+    {"mesi": [8, 10], "min": 150, "max": 210},
+    {"mesi": [11, 14], "min": 180, "max": 240},
+    {"mesi": [15, 24], "min": 270, "max": 360}
+   ],
+   "segnali": "Guarda anche i suoi segnali: sbadiglia, si strofina gli occhi, guarda fisso, diventa nervoso. Al primo segnale, inizia il rituale."
+  },
+  "consulente": {
+   "nome": "Consulente del Sonno",
+   "sotto": "Ogni mattina, cosa cambiare stasera",
+   "prezzo": "19,90 €",
+   "testo": "Ogni mattina segni com'è andata la notte con due tocchi, e l'app ti dice cosa cambiare stasera. Dentro trovi anche l'SOS per regressioni, dentini, salti, viaggi e malattie, fino ai 3 anni.",
+   "consigli": {
+    "facile-poco": "Ottima notte. Stasera non cambiare niente: stesso rituale, stessa ora, stesso suono.",
+    "facile-medio": "Si addormenta bene, ma si sveglia. Stasera controlla l'ora: se ha dormito tanto nel pomeriggio, anticipa il risveglio dal pisolino. Al risveglio di notte, prima un minuto di attesa e il suono, poi la mano sul pancino.",
+    "facile-tanti": "Si addormenta bene ma si sveglia spesso: a volte è troppo stanco. Stasera anticipa la nanna di 20-30 minuti e tieni il suono acceso tutta la notte.",
+    "lungo-poco": "Ci mette tanto, ma poi dorme. Forse non era ancora stanco: stasera inizia il rituale 15-20 minuti più tardi, o accorcia l'ultimo pisolino.",
+    "lungo-medio": "Ci mette tanto e si sveglia. Stasera rituale più lento e luce più bassa già un'ora prima. Niente giochi vivaci dopo cena.",
+    "lungo-tanti": "Notte difficile. Stasera torna al passo di ieri del piano e anticipa la nanna di 20 minuti. Una notte storta capita: domani si riparte.",
+    "braccio-poco": "Si addormenta ancora in braccio, ma la notte va bene. Stasera, nel lettino un po' prima, quando è sonnolento, con la mano sul pancino.",
+    "braccio-medio": "Si sveglia e cerca le braccia: è il segno che si è addormentato in braccio. Stasera ripeti la notte del piano in cui eri, senza saltare avanti.",
+    "braccio-tanti": "Tanti risvegli e si addormenta solo in braccio. Stasera nessun passo nuovo: rituale completo, suono acceso tutta la notte, e lo appoggi quando è sonnolento."
+   },
+   "sos": [
+    {"id": "4mesi", "nome": "La regressione dei 4 mesi", "testo": "Verso i 4 mesi il sonno cambia e diventa più leggero: si sveglia di più anche se prima dormiva. Non è un passo indietro. Tieni lo stesso rituale ogni sera e approfitta per metterlo nel lettino più sveglio: è il momento in cui impara ad addormentarsi da solo."},
+    {"id": "8mesi", "nome": "Gli 8-10 mesi", "testo": "Gattona, si tira su in piedi, cerca te quando esci dalla stanza. Di giorno fagli fare tanta pratica dei movimenti nuovi, così di notte non li prova nel lettino. Se si alza in piedi, aspetta un attimo: spesso si rimette giù da solo."},
+    {"id": "18mesi", "nome": "I 18 mesi", "testo": "Vuole decidere, dice di no alla nanna. Dagli piccole scelte nel rituale: quale pigiama, quale libro. La frase della nanna e l'ora restano uguali."},
+    {"id": "dentini", "nome": "I dentini", "testo": "Può svegliarsi di più per qualche notte. Consolalo e tieni lo stesso rituale. Per il dolore senti il pediatra. Quando passa, riprendi dal punto del piano in cui eri."},
+    {"id": "salto", "nome": "Un salto di crescita", "testo": "Più fame e più risvegli per qualche giorno. Il latte in più va bene. Tieni rituale e suono uguali: dopo pochi giorni torna come prima."},
+    {"id": "viaggio", "nome": "In viaggio", "testo": "Porta il suono, il sacco nanna e la frase della nanna: sono la sua casa in un posto nuovo. Fai il rituale anche in vacanza, magari più corto."},
+    {"id": "malattia", "nome": "Quando è malato", "testo": "Quando sta male, conta solo farlo stare bene: consolalo come serve e senti il pediatra. Il piano aspetta. Quando è guarito, riparti da due notti prima del punto in cui eri."},
+    {"id": "ora", "nome": "Il cambio dell'ora", "testo": "Nei giorni prima del cambio sposta la nanna di 15 minuti al giorno verso l'ora nuova. Se non ci sei riuscita, va bene lo stesso: in una settimana si sistema."},
+    {"id": "poppate", "nome": "Togliere le poppate di notte", "testo": "Prima senti il pediatra. Se ti dice che puoi, riduci di poco ogni notte la poppata più vicina alla mezzanotte, e lascia per ultima quella del mattino presto."}
+   ]
+  }
+ }
+}

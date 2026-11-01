@@ -1,0 +1,32 @@
+{
+ "name": "Nanna Subito",
+ "short_name": "Nanna Subito",
+ "lang": "it",
+ "description": "Il rituale della nanna, i suoni che non si fermano e il piano di 7 notti.",
+ "start_url": "./",
+ "scope": "../",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#eef6fc",
+ "theme_color": "#d3eafa",
+ "icons": [
+  {
+   "src": "../img/icones/icone-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "../img/icones/icone-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "../img/icones/icone-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
