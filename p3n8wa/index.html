@@ -110,6 +110,11 @@ details[open] summary::after{transform:rotate(45deg)}
 details p{margin:0 0 14px;color:var(--suave);font-size:15.5px}
 .scuro{position:fixed;inset:0;background:#000;color:#3a4566;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:15px}
 .rodape{font-size:13px;color:var(--suave);text-align:center;margin-top:26px}
+.guida-passo{margin-top:14px;padding:18px;border:1px solid var(--linha);border-radius:18px;background:var(--cartao)}
+.guida-passo p{margin:8px 0;color:var(--suave);font-size:15px}.guida-passo .btn{margin-top:12px}
+.scheda-campo{display:block;margin-top:18px;font-weight:700}.scheda-campo textarea{display:block;box-sizing:border-box;width:100%;min-height:100px;margin-top:8px;padding:13px;border:1px solid var(--linha);border-radius:12px;background:var(--fundo);color:var(--tinta);font:400 16px/1.5 system-ui;resize:vertical}
+.scheda-campo textarea:focus-visible{outline:3px solid var(--forte);outline-offset:2px}.scheda-stato{font-size:13px;color:var(--suave);min-height:22px}
+@media print{html,body{background:white!important;color:#17283e!important}body>*:not(#app){display:none!important}.tela{max-width:none!important;padding:0!important}.topo,.no-print{display:none!important}.scheda-campo textarea{height:auto;min-height:110px;overflow:visible;border-color:#999;color:#17283e;background:white;outline:none;resize:none}.scheda-campo{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -257,6 +262,9 @@ function telaHome() {
    <button class="tile" data-a="ir" data-t="sos">${IC('sos')}<span>SOS 3:00<small>si è svegliato</small></span></button>
   </div>
   ${blocoPiano()}
+  <h2 style="margin-top:26px">I tuoi due bonus inclusi</h2>
+  <button class="extra" data-a="ir" data-t="guida"><span class="ic">${IC('rituale')}</span><span><b>Guida rapida per cominciare</b><small>Da dove partire e cosa aprire dopo</small></span><span class="fim">${I.dir}</span></button>
+  <button class="extra" data-a="ir" data-t="scheda"><span class="ic">${IC('piano')}</span><span><b>La vostra scheda della sera</b><small>La routine da tenere a portata di mano</small></span><span class="fim">${I.dir}</span></button>
   ${instalarBloco()}
   <h2 style="margin-top:26px">Per le notti che vengono</h2>
   ${['seno', 'lettino', 'orologio', 'consulente'].map(extra).join('')}
@@ -360,6 +368,26 @@ function telaPacchetto(id) {
   }
 }
 
+function telaGuida() {
+  return `<div class="topo">${voltar()}${toggleNotte()}</div><span class="etiq">Bonus incluso · guida rapida</span><h1>Da dove comincio?</h1>
+  <p class="suave">Segui questo ordine per trovare subito quello che ti serve nell’app.</p>
+  <div class="guida-passo"><b>1. Prima di cominciare</b><p>Apri la preparazione della stanza e controlla le voci. Ritrovi qui anche le indicazioni di utilizzo.</p><button class="btn sec" data-a="ir" data-t="stanza">Prepara la stanza</button></div>
+  <div class="guida-passo"><b>2. Quando è ora della nanna</b><p>Avvia il rituale: una schermata alla volta. Alla fine puoi scegliere uno dei sei suoni.</p><button class="btn sec" data-a="rituale">Apri il rituale</button></div>
+  <div class="guida-passo"><b>3. Se si sveglia</b><p>Apri l’SOS per ritrovare le indicazioni, senza cercare tra tutte le sezioni.</p><button class="btn sec" data-a="ir" data-t="sos">Apri SOS 3:00</button></div>
+  <div class="guida-passo"><b>4. Le sere successive</b><p>${piccolo() ? 'Nei primi quattro mesi continua con i contenuti dedicati ai più piccoli. Il percorso si apre dai quattro mesi.' : 'Apri il percorso dal punto di partenza scelto. Puoi ripetere una tappa prima di proseguire: sette tappe non sono una scadenza.'}</p>${piccolo() ? '' : '<button class="btn sec" data-a="ir" data-t="piano">Apri il percorso</button>'}</div>
+  <div class="guida-passo"><b>Dividi la routine con qualcuno?</b><p>Compila la scheda della sera con le vostre abitudini e i promemoria utili.</p><button class="btn linha" data-a="ir" data-t="scheda">Prepara la vostra scheda</button></div>`;
+}
+const schedaCampi = [['rituale','Il nostro rituale','La sequenza che vogliamo ritrovare stasera'],['punto','Il punto a cui siamo arrivati','Il passaggio del percorso o la sezione che stiamo usando'],['ricordare','Da ricordare a chi mi dà una mano','Abitudini, preferenze e cose utili da sapere']];
+const testoSicuro = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function telaScheda() {
+  const dati = LS.ler('ns_scheda', {});
+  return `<div class="topo">${voltar()}${toggleNotte()}</div><span class="etiq">Bonus incluso · scheda compilabile</span><h1>La nostra sera</h1>
+  <p class="suave">La vostra routine, pronta da ritrovare o passare a chi ti dà una mano. Scrivi i passaggi e i promemoria che vuoi tenere a portata di mano.</p>
+  ${schedaCampi.map(([id,titolo,esempio])=>`<label class="scheda-campo" for="scheda-${id}">${titolo}<textarea id="scheda-${id}" data-scheda="${id}" maxlength="600" placeholder="${esempio}">${testoSicuro(dati[id])}</textarea></label>`).join('')}
+  <p class="scheda-stato no-print" role="status" id="scheda-stato">Le note restano in questo browser. Non vengono inviate né sincronizzate.</p>
+  <button class="btn sec no-print" data-a="scheda-stampa">Stampa o salva in PDF</button><p class="suave pq no-print">Puoi poi condividere il PDF con chi si occupa della nanna. Se usi un dispositivo condiviso, evita dati personali.</p>`;
+}
+
 function telaProfilo() {
   return `<div class="topo">${voltar()}</div><h1>Il tuo bimbo</h1>
   <div class="cartao"><label><b>Nome</b><input id="nome" maxlength="20" value="${E.nome}" style="margin-top:8px"></label>
@@ -386,8 +414,9 @@ function render() {
   if (E.mesi == null || !E.partenza) { app.innerHTML = `<div class="tela">${telaBenvenuto()}</div>`; return; }
   const t = T.tela;
   const html = t === 'stanza' ? telaStanza() : t === 'rituale' ? telaRituale() : t === 'suoni' ? telaSuoni() : t === 'sos' ? telaSos()
-    : t === 'piano' ? telaPiano() : t === 'pacchetto' ? telaPacchetto(T.id) : t === 'profilo' ? telaProfilo() : telaHome();
+    : t === 'piano' ? telaPiano() : t === 'guida' ? telaGuida() : t === 'scheda' ? telaScheda() : t === 'pacchetto' ? telaPacchetto(T.id) : t === 'profilo' ? telaProfilo() : telaHome();
   app.innerHTML = `<div class="tela">${html}</div>`;
+  app.querySelectorAll('[data-scheda]').forEach(el=>{el.style.height='auto';el.style.height=el.scrollHeight+2+'px'});
   const sv = document.getElementById('sveglio');
   if (sv) sv.addEventListener('change', () => { T.sveglio = sv.value; render(); });
 }
@@ -400,12 +429,20 @@ function iniciarCrono() {
   crono = setInterval(() => { T.resta = Math.max(0, T.resta - 1); const el = document.getElementById('crono'); if (el) el.textContent = mmss(T.resta); if (!T.resta) clearInterval(crono); }, 1000);
 }
 
+app.addEventListener('input', e => {
+  const campo=e.target.dataset.scheda;if(!schedaCampi.some(([id])=>id===campo))return;
+  e.target.style.height='auto';e.target.style.height=e.target.scrollHeight+2+'px';
+  const dati=Object.fromEntries(schedaCampi.map(([id])=>[id,document.getElementById('scheda-'+id).value]));
+  let saved=true;try{localStorage.setItem('ns_scheda',JSON.stringify(dati))}catch{saved=false}
+  const stato=document.getElementById('scheda-stato');if(stato)stato.textContent=saved?'Salvato in questo browser. Nessun invio o sincronizzazione.':'Salvataggio non disponibile. Salva una copia in PDF prima di uscire.';
+});
 app.addEventListener('click', e => {
   const b = e.target.closest('[data-a]'); if (!b) return;
   const a = b.dataset.a;
   if (a === 'benv-1') { E.nome = document.getElementById('nome').value.trim(); E.mesi = +document.getElementById('mesi').value; E.quando = hoje(); salvar(); T.passo = 2; render(); }
   else if (a === 'partenza') { E.partenza = b.dataset.p; salvar(); ir(E.stanza.length ? 'home' : 'stanza'); }
   else if (a === 'ir') ir(b.dataset.t);
+  else if (a === 'scheda-stampa') window.print();
   else if (a === 'notte') { E.notturno = !E.notturno; salvar(); render(); }
   else if (a === 'stanza') { const v = b.dataset.v; E.stanza = E.stanza.includes(v) ? E.stanza.filter(x => x !== v) : [...E.stanza, v]; salvar(); render(); }
   else if (a === 'rituale') { ir('rituale', { i: 0 }); iniciarCrono(); }
