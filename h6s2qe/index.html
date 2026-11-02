@@ -342,8 +342,8 @@ function telaPacchetto(id) {
     const voltarSeno = `<div class="topo"><button class="voltar" data-a="pacchetto" data-p="seno">${I.esq}Indietro</button>${toggleNotte()}</div>`;
     if (sub === 'fame') {
       return `${voltarSeno}<h1>${k.fame.titolo}</h1><p class="suave">${k.fame.sotto}</p>
-      <div class="cartao"><span class="etiq">È fame</span><ul class="sinais">${k.fame.si.map(x => `<li>${x}</li>`).join('')}</ul></div>
-      <div class="cartao"><span class="etiq">Cerca il seno per riaddormentarsi</span><ul class="sinais">${k.fame.no.map(x => `<li>${x}</li>`).join('')}</ul></div>
+      <div class="cartao"><span class="etiq">${k.fame.etichette.si}</span><ul class="sinais">${k.fame.si.map(x => `<li>${x}</li>`).join('')}</ul></div>
+      <div class="cartao"><span class="etiq">${k.fame.etichette.no}</span><ul class="sinais">${k.fame.no.map(x => `<li>${x}</li>`).join('')}</ul></div>
       <div class="alerta"><b>${k.fame.regola}</b></div>
       ${ir_('passi')}`;
     }

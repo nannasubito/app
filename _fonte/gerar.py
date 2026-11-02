@@ -28,7 +28,7 @@ for k, notti in c['piano']['notti'].items():
 seno = c['pacchetti']['seno']
 assert len(seno['notti']) == 7
 assert set(seno['titoli']) == {'notte', 'fame', 'passi', 'sicuro', 'avanti', 'ripeti'}, 'seno: rótulos das telas'
-assert seno['fame']['si'] and seno['fame']['no'] and seno['fame']['regola'] and seno['passi'] and seno['sicuro']['voci'], 'seno: telas fame, passi, sicuro'
+assert seno['fame']['si'] and seno['fame']['no'] and seno['fame']['regola'] and set(seno['fame']['etichette']) == {'si', 'no'} and seno['passi'] and seno['sicuro']['voci'], 'seno: telas fame, passi, sicuro'
 assert seno['piccoli'] and seno['fatto'] and seno['notte'], 'seno: piccoli, fatto, notte'
 assert list(c['pacchetti']) == ['seno', 'lettino', 'orologio', 'consulente'], 'ordem dos cartões'
 assert set(c['pacchetti']['consulente']['consigli']) == {f'{a}-{r}' for a in ('facile', 'lungo', 'braccio') for r in ('poco', 'medio', 'tanti')}
