@@ -10,22 +10,27 @@ APP = os.path.dirname(AQUI)
 # pasta -> o que ela libera. Cada compra leva ao link da sua pasta; o aparelho soma tudo o que já abriu.
 PASTAS = {
     'p3n8wa': ['base'],                                              # front: rituale, suoni, SOS, piano 7 notti
-    'h6s2qe': ['base', 'seno'],                                      # bump Senza seno
+    'h6s2qe': ['base', 'seno'],                                      # bump Nanna senza seno (a madrugada)
     'r9l4tm': ['base', 'lettino'],                                   # bump Nel lettino
     'z5o7ck': ['base', 'orologio'],                                  # bump Orologio della Nanna
-    'k8c3vd': ['base', 'consulente'],                                # upsell Consulente del Sonno
+    'k8c3vd': ['base', 'consulente'],                                # upsell Diario della Nanna (chave interna 'consulente')
     't2x9aa': ['base', 'seno', 'lettino', 'orologio', 'consulente'], # teste interno: tudo liberado (fora do ar, ver .gitignore)
 }
 # checkouts avulsos dos pacotes, abertos pelo cadeado dentro do app (Hotmart em euro; sem ?checkoutMode=10 o banner some)
 CHECKOUT = {k: f'https://pay.hotmart.com/{c}?checkoutMode=10' for k, c in
             {'seno': 'R108290415K', 'lettino': 'O108290587G', 'orologio': 'W108290592I', 'consulente': 'F108290595O'}.items()}
-VERSAO = 3
+VERSAO = 4
 
 c = json.load(open(os.path.join(AQUI, 'conteudo', 'conteudo.json'), encoding='utf-8'))
 c.pop('_nota', None)
 for k, notti in c['piano']['notti'].items():
     assert len(notti) == 7 and k in c['piano']['partenze'], f'partenza {k}: 7 notti'
-assert len(c['pacchetti']['seno']['notti']) == 7
+seno = c['pacchetti']['seno']
+assert len(seno['notti']) == 7
+assert set(seno['titoli']) == {'notte', 'fame', 'passi', 'sicuro', 'avanti', 'ripeti'}, 'seno: rótulos das telas'
+assert seno['fame']['si'] and seno['fame']['no'] and seno['fame']['regola'] and seno['passi'] and seno['sicuro']['voci'], 'seno: telas fame, passi, sicuro'
+assert seno['piccoli'] and seno['fatto'] and seno['notte'], 'seno: piccoli, fatto, notte'
+assert list(c['pacchetti']) == ['seno', 'lettino', 'orologio', 'consulente'], 'ordem dos cartões'
 assert set(c['pacchetti']['consulente']['consigli']) == {f'{a}-{r}' for a in ('facile', 'lungo', 'braccio') for r in ('poco', 'medio', 'tanti')}
 for nome in ('pancia', 'rumore-bianco', 'pioggia', 'ninna-1', 'ninna-2', 'ninna-cascata'):
     assert os.path.exists(os.path.join(APP, 'suoni', nome + '.wav')), f'falta o som {nome} (rodar _fonte/sons.py e _fonte/tratar.py)'

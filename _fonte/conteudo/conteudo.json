@@ -93,20 +93,61 @@
  },
  "pacchetti": {
   "seno": {
-   "nome": "Senza seno",
-   "sotto": "Si addormenta senza attaccarsi",
-   "prezzo": "9,90 €",
-   "testo": "Il piano notte per notte per farlo addormentare senza attaccarsi al seno o al biberon, senza pianti. Continui ad allattare quando vuoi.",
+   "nome": "Nanna senza seno",
+   "sotto": "Di notte, quando cerca il seno ma non ha fame",
+   "prezzo": "14,90 €",
+   "testo": "Per i risvegli di notte che finiscono solo al seno, anche quando non ha fame: come capire se è fame, cosa provare prima del seno e come allattare di notte al sicuro. Dai 4 mesi. Le poppate restano tutte.",
+   "piccoli": "Sotto i 4 mesi di notte si sveglia per mangiare, ed è giusto così: allatta ogni volta che lo chiede e usa l'SOS. Il piano si apre da solo quando compie 4 mesi. «Allattare di notte, al sicuro» puoi leggerlo già adesso.",
+   "titoli": {
+    "notte": "Stanotte, notte",
+    "fame": "È fame?",
+    "passi": "Quando non è fame",
+    "sicuro": "Allattare di notte, al sicuro",
+    "avanti": "Fatto, domani la notte",
+    "ripeti": "Stanotte ripeto questa"
+   },
    "notti": [
-    "Stasera solo osservi: segna a che punto della poppata rallenta e comincia a chiudere gli occhi.",
-    "Il latte va all'inizio del rituale, con la lucina accesa, non alla fine.",
-    "Quando rallenta a succhiare, stacca piano. Se cerca il seno, rimettilo per un attimo e riprova dopo un minuto.",
-    "Stacca prima, appena rallenta. Poi in braccio, con il suono, finché è sonnolento.",
-    "Dopo il latte, un passaggio in più: pannolino o la frase della nanna. Così il latte non è più l'ultima cosa.",
-    "Nel lettino sonnolento, mano sul pancino. Se piange forte, prendilo, calmalo e riprova.",
-    "Latte, frase della nanna, suono, lettino. Il latte è lontano dal momento in cui si addormenta."
+    "Stanotte non cambi niente: allatta a ogni risveglio e guarda solo una cosa, se è fame o conforto. Al primo risveglio apri «È fame?».",
+    "Ai risvegli di conforto allatta, e quando succhia leggero stacca piano e rimettilo nel lettino, ancora sonnolento. Se cerca il seno, riattaccalo per un attimo e riprova dopo un minuto.",
+    "Ai risvegli di conforto, prima del seno, le braccia: fermo o cullato, con il suono. Se si calma, nel lettino. Se piange forte o cerca il seno, allatta.",
+    "Come ieri. Se qualcuno ti dà il cambio, ai risvegli di conforto va prima lui o lei, con braccia e suono. Se il bimbo ha fame, ti chiama.",
+    "Prima delle braccia, la mano: mano sul pancino e la frase della nanna. Se non basta, in braccio. Se non basta, il seno.",
+    "Come ieri, a ogni risveglio di conforto. Se una notte va storta, torna alla notte 3: non è una gara.",
+    "La scala di ogni notte: un minuto, il suono, la mano, le braccia, il seno. Il seno c'è sempre, solo non è più il primo passo."
    ],
-   "notte": "Di notte, se si sveglia e ha fame, il latte va bene. Prima di togliere le poppate notturne senti il pediatra: dipende dall'età e da come cresce."
+   "fatto": "Ai risvegli di conforto il seno non è più il primo passo. Le poppate di fame restano tutte.",
+   "fame": {
+    "titolo": "È fame o cerca il seno per riaddormentarsi?",
+    "sotto": "Guardalo nei primi minuti della poppata.",
+    "si": [
+     "Succhia a lungo, con un ritmo lento e profondo, e lo senti deglutire.",
+     "Si agita, cerca il seno con la bocca e si calma solo mangiando.",
+     "È la poppata che fa quasi sempre a quell'ora, e mangia tanto."
+    ],
+    "no": [
+     "Appena attaccato si calma e in un minuto o due dorme.",
+     "Succhia leggero, a colpetti, quasi senza deglutire.",
+     "Si sveglia quando lo stacchi, anche se ha mangiato da poco."
+    ],
+    "regola": "Nel dubbio è fame: allatta. Questo piano cambia solo i risvegli di conforto."
+   },
+   "passi": [
+    {"titolo": "Prima l'SOS", "testo": "Un minuto di attesa e il suono di sempre. A volte basta questo."},
+    {"titolo": "La mano e la voce", "testo": "Mano sul pancino e la frase della nanna, piano, senza prenderlo in braccio."},
+    {"titolo": "Le braccia", "testo": "Se non basta, prendilo in braccio, fermo o cullato, con il suono, finché si calma. Poi nel lettino, ancora sonnolento."},
+    {"titolo": "Chi ti dà il cambio", "testo": "Se c'è il papà o chi ti aiuta, la mano e le braccia può farle lui o lei: il seno non c'è, e spesso lo cerca meno. Se il bimbo ha fame, ti chiama."},
+    {"titolo": "Il seno, sempre", "testo": "Se piange forte o cerca il seno, allatta: va bene, non è un passo indietro. Quando succhia leggero, stacca piano e rimettilo nel lettino."}
+   ],
+   "sicuro": {
+    "titolo": "Allattare di notte, al sicuro",
+    "voci": [
+     "Se senti che ti addormenti, non allattare sul divano o in poltrona: è il posto più pericoloso per il bimbo.",
+     "Se pensi di poterti addormentare, meglio allattare nel tuo letto, con cuscini e coperte lontani dal bimbo. Appena ti svegli, rimettilo nella sua culla.",
+     "Dopo la poppata, sempre nella sua culla, a pancia in su, con la culla libera.",
+     "Luce bassa e telefono in modalità notte, così la poppata non lo sveglia del tutto."
+    ]
+   },
+   "notte": "Questo piano non toglie poppate: se ha fame, il latte c'è sempre. Se cresce poco, è malato o il pediatra ti ha detto di allattarlo spesso, allatta a ogni risveglio. Prima di togliere le poppate di notte, senti il pediatra."
   },
   "lettino": {
    "nome": "Nel lettino",
@@ -139,10 +180,10 @@
    "segnali": "Guarda anche i suoi segnali: sbadiglia, si strofina gli occhi, guarda fisso, diventa nervoso. Al primo segnale, inizia il rituale."
   },
   "consulente": {
-   "nome": "Consulente del Sonno",
+   "nome": "Diario della Nanna",
    "sotto": "Ogni mattina, cosa cambiare stasera",
    "prezzo": "19,90 €",
-   "testo": "Ogni mattina segni com'è andata la notte con due tocchi, e l'app ti dice cosa cambiare stasera. Dentro trovi anche l'SOS per regressioni, dentini, salti, viaggi e malattie, fino ai 3 anni.",
+   "testo": "Ogni mattina segni com'è andata la notte con due tocchi, e ti dice cosa cambiare stasera. Dentro anche l'SOS per regressioni, dentini, salti, viaggi e malattie, fino ai 3 anni.",
    "consigli": {
     "facile-poco": "Ottima notte. Stasera non cambiare niente: stesso rituale, stessa ora, stesso suono.",
     "facile-medio": "Si addormenta bene, ma si sveglia. Stasera controlla l'ora: se ha dormito tanto nel pomeriggio, anticipa il risveglio dal pisolino. Al risveglio di notte, prima un minuto di attesa e il suono, poi la mano sul pancino.",

@@ -78,6 +78,7 @@ body.notte .cadeado{color:var(--lua)}
 .passos li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;background:var(--cartao);border:1px solid var(--linha);border-radius:18px;padding:13px 14px;font-size:16.5px}
 .passos li b{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--azul2);color:var(--forte);font-size:17px}
 .passos li h3{font-size:17px}.passos li p{margin-top:2px;font-size:15.5px;color:var(--suave)}
+.sinais{margin:8px 0 0;padding-left:20px}.sinais li{margin-top:6px;font-size:16.5px}
 .alerta{background:var(--alerta2);border-radius:16px;padding:14px;margin-top:14px;font-size:15px}
 .alerta b{color:var(--alerta)}
 body.notte .alerta b{color:#f0a493}
@@ -334,11 +335,37 @@ function telaPacchetto(id) {
   const k = PAC[id];
   if (!tem(id)) return telaHome();
   if (id === 'seno') {
+    /* a madrugada: "Stanotte" e três telas de apoio (È fame?, Quando non è fame, Allattare di notte al sicuro).
+       Abaixo de 4 meses só a mensagem piccoli e a tela do sono seguro, que vale em qualquer idade. */
+    const t = k.titoli, sub = piccolo() && T.sub !== 'sicuro' ? null : T.sub;
+    const ir_ = s => `<button class="extra" data-a="seno-sub" data-s="${s}"><span><b>${t[s]}</b></span><span class="fim">${I.dir}</span></button>`;
+    const voltarSeno = `<div class="topo"><button class="voltar" data-a="pacchetto" data-p="seno">${I.esq}Indietro</button>${toggleNotte()}</div>`;
+    if (sub === 'fame') {
+      return `${voltarSeno}<h1>${k.fame.titolo}</h1><p class="suave">${k.fame.sotto}</p>
+      <div class="cartao"><span class="etiq">È fame</span><ul class="sinais">${k.fame.si.map(x => `<li>${x}</li>`).join('')}</ul></div>
+      <div class="cartao"><span class="etiq">Cerca il seno per riaddormentarsi</span><ul class="sinais">${k.fame.no.map(x => `<li>${x}</li>`).join('')}</ul></div>
+      <div class="alerta"><b>${k.fame.regola}</b></div>
+      ${ir_('passi')}`;
+    }
+    if (sub === 'passi') {
+      return `${voltarSeno}<h1>${t.passi}</h1>
+      <ul class="passos">${k.passi.map((p, j) => `<li><b>${j + 1}</b><div><h3>${p.titolo}</h3><p>${p.testo}</p></div></li>`).join('')}</ul>
+      ${ir_('sicuro')}`;
+    }
+    if (sub === 'sicuro') {
+      return `${voltarSeno}<h1>${k.sicuro.titolo}</h1>
+      <ul class="passos">${k.sicuro.voci.map((v, j) => `<li><b>${j + 1}</b><span>${v}</span></li>`).join('')}</ul>`;
+    }
+    if (piccolo()) {
+      return `<div class="topo">${voltar()}${toggleNotte()}</div><h1>${k.nome}</h1><p class="suave">${k.sotto}</p>
+      <div class="cartao"><p>${k.piccoli}</p></div>${ir_('sicuro')}`;
+    }
     const n = Math.min(E.seno, 7);
-    return `<div class="topo">${voltar()}</div><h1>${k.nome}</h1><p class="suave">${k.sotto}</p>
+    return `<div class="topo">${voltar()}${toggleNotte()}</div><h1>${k.nome}</h1><p class="suave">${k.sotto}</p>
     <div class="notti">${Array.from({ length: 7 }, (_, j) => `<i class="${j + 1 < E.seno ? 'f' : ''}${j + 1 === n && E.seno <= 7 ? ' on' : ''}">${j + 1}</i>`).join('')}</div>
-    <div class="cartao"><span class="etiq">${E.seno > 7 ? 'Fatto' : 'Stasera, notte ' + n}</span><p style="font-size:18px">${E.seno > 7 ? 'Si addormenta lontano dal latte. Tieni lo stesso ordine ogni sera.' : k.notti[n - 1]}</p></div>
-    ${E.seno <= 7 ? `<button class="btn prim" data-a="seno-avanti">Fatto, domani la notte ${Math.min(n + 1, 7)}</button><button class="btn linha" data-a="ir" data-t="home">Stasera ripeto questa</button>` : ''}
+    <div class="cartao"><span class="etiq">${E.seno > 7 ? 'Fatto' : t.notte + ' ' + n}</span><p style="font-size:18px">${E.seno > 7 ? k.fatto : k.notti[n - 1]}</p></div>
+    ${E.seno <= 7 ? `<button class="btn prim" data-a="seno-avanti">${t.avanti} ${Math.min(n + 1, 7)}</button><button class="btn linha" data-a="ir" data-t="home">${t.ripeti}</button>` : ''}
+    ${['fame', 'passi', 'sicuro'].map(ir_).join('')}
     <div class="alerta">${k.notte}</div>`;
   }
   if (id === 'lettino') {
@@ -456,6 +483,7 @@ app.addEventListener('click', e => {
   else if (a === 'ripeti5') { E.notte = 5; salvar(); render(); }
   else if (a === 'pacchetto') { const id = b.dataset.p; if (tem(id)) ir('pacchetto', { id }); else folhaCadeado(id); }
   else if (a === 'seno-avanti') { E.seno++; salvar(); render(); }
+  else if (a === 'seno-sub') ir('pacchetto', { id: 'seno', sub: b.dataset.s });
   else if (a === 'diario') { T.r = Object.assign({}, T.r, { [b.dataset.c]: b.dataset.v }); if (T.r.a && T.r.r) { E.diario = [...E.diario.filter(d => d.data !== hoje()), { data: hoje(), a: T.r.a, r: T.r.r }].slice(-30); salvar(); T.r = {}; } render(); }
   else if (a === 'diario-rifai') { E.diario = E.diario.filter(d => d.data !== hoje()); salvar(); render(); }
   else if (a === 'salva-profilo') {
