@@ -5,7 +5,7 @@
   "sotto": "Si fa una volta, prima della prima notte. Poi resta così.",
   "voci": [
    {"id": "buio", "nome": "Buio, con una lucina calda", "testo": "Tende chiuse e luce grande spenta. Se ti serve vedere, una lucina calda e bassa, arancione o rossa, lontana dagli occhi del bimbo."},
-   {"id": "fresca", "nome": "Stanza fresca", "testo": "Tra 18 e 20 gradi. Meglio un po' fresca che troppo calda: non coprirlo troppo e niente cappellino per dormire."},
+   {"id": "fresca", "nome": "Stanza fresca", "testo": "Intorno ai 20 gradi, senza surriscaldare. Meglio un po' fresca che troppo calda: non coprirlo troppo e niente cappellino per dormire."},
    {"id": "culla", "nome": "Culla libera", "testo": "Materasso rigido, solo il lenzuolo con gli angoli. Niente cuscini, peluche, paracolpi o coperte sciolte: per coprirlo, un sacco nanna della sua misura."},
    {"id": "pancia", "nome": "A pancia in su", "testo": "Sempre a pancia in su, nella sua culla o nel suo lettino, per ogni nanna, anche di giorno."},
    {"id": "telefono", "nome": "Telefono lontano dalla culla", "testo": "Appoggia il telefono dall'altra parte della stanza, mai dentro la culla o sul bordo. Il suono va bene a volume basso: deve coprire i rumori, non coprire te che parli piano."},
@@ -23,8 +23,8 @@
   "piccoli": [
    {"titolo": "Pannolino e pigiama", "testo": "Pannolino pulito e pigiama, sempre nello stesso ordine.", "sec": 120},
    {"titolo": "Luce bassa", "testo": "Spegni la luce grande e lascia solo la lucina. Da qui in poi parla piano.", "sec": 60},
-   {"titolo": "Latte e coccole", "testo": "Nei primi mesi va benissimo che si addormenti al seno, col biberon o in braccio: in questa età la cosa più importante è calmarlo.", "sec": 0},
-   {"titolo": "Il suono", "testo": "Accendi il suono a volume basso, con il telefono lontano dalla culla. A tanti neonati il suono della pancia o il rumore bianco aiutano a calmarsi.", "sec": 0},
+   {"titolo": "Latte e coccole", "testo": "Nei primi mesi va benissimo che si addormenti al seno, col biberon o in braccio: a questa età la cosa più importante è calmarlo.", "sec": 0},
+   {"titolo": "Il suono", "testo": "Accendi il suono a volume basso, con il telefono lontano dalla culla. Tanti neonati si calmano con il suono della pancia o con il rumore bianco.", "sec": 0},
    {"titolo": "Nella culla", "testo": "Quando dorme bene, con il respiro regolare e le braccia molli, appoggialo nella culla a pancia in su.", "sec": 0}
   ]
  },
@@ -54,7 +54,7 @@
   "notti": {
    "seno": [
     "Il latte si sposta all'inizio del rituale, con la lucina accesa. Se si addormenta mentre mangia, va bene: stasera conta solo l'ordine nuovo.",
-    "Stacca il seno o il biberon quando rallenta a succhiare, prima che dorma. Se protesta, cullalo in braccio finché è sonnolento.",
+    "Staccalo dal seno o togli il biberon quando rallenta a succhiare, prima che dorma. Se protesta, cullalo in braccio finché è sonnolento.",
     "Dal latte direttamente in braccio, poi nel lettino ancora sonnolento. Mano sul pancino e suono acceso.",
     "Nel lettino sonnolento, mano sul pancino e \"sh sh\". Se piange forte, prendilo, calmalo e riprova.",
     "Mano sul pancino che si alleggerisce: prima ferma, poi solo appoggiata. Tu resti seduta accanto.",
@@ -76,7 +76,7 @@
     "La sedia si sposta di un passo verso la porta.",
     "La sedia a metà stanza. Se si agita, la tua voce, piano.",
     "La sedia vicino alla porta.",
-    "Frase della nanna, suono acceso, ed esci. Se piange, torni subito, lo rassicuri e riesci.",
+    "Frase della nanna, suono acceso, ed esci. Se piange, torni subito, lo rassicuri ed esci di nuovo.",
     "Frase della nanna, suono acceso, ed esci. Torni ogni volta che serve: nessuno piange da solo."
    ],
    "lettone": [
@@ -89,15 +89,15 @@
     "Frase della nanna, suono acceso, e resti nella stanza solo finché si calma. Se piange, torni e lo rassicuri."
    ]
   },
-  "piccoli": "Sotto i 4 mesi il piano delle 7 notti non serve ancora: in questa età si addormenta come può, e va bene. Usa il rituale, i suoni e l'SOS. Il piano si apre da solo quando compie 4 mesi."
+  "piccoli": "Sotto i 4 mesi il piano delle 7 notti non serve ancora: a questa età si addormenta come può, e va bene. Usa il rituale, i suoni e l'SOS. Il piano si apre da solo quando compie 4 mesi."
  },
  "pacchetti": {
   "seno": {
    "nome": "Nanna senza seno",
    "sotto": "Di notte, quando cerca il seno ma non ha fame",
    "prezzo": "14,90 €",
-   "testo": "Per i risvegli di notte che finiscono solo al seno, anche quando non ha fame: come capire se è fame, cosa provare prima del seno e come allattare di notte al sicuro. Dai 4 mesi. Le poppate restano tutte.",
-   "piccoli": "Sotto i 4 mesi di notte si sveglia per mangiare, ed è giusto così: allatta ogni volta che lo chiede e usa l'SOS. Il piano si apre da solo quando compie 4 mesi. «Allattare di notte, al sicuro» puoi leggerlo già adesso.",
+   "testo": "Per i risvegli di notte che finiscono solo al seno, anche quando non ha fame: come capire se è fame, cosa provare prima del seno e come allattare di notte al sicuro. Dai 6 mesi. Le poppate restano tutte.",
+   "piccoli": "Sotto i 6 mesi le poppate di notte sono normali e servono: allatta ogni volta che lo chiede e usa l'SOS. Il piano si apre da solo quando compie 6 mesi. «Allattare di notte, al sicuro» puoi leggerlo già adesso.",
    "titoli": {
     "notte": "Stanotte, notte",
     "fame": "È fame?",
@@ -108,9 +108,9 @@
    },
    "notti": [
     "Stanotte non cambi niente: allatta a ogni risveglio e guarda solo una cosa, se è fame o conforto. Al primo risveglio apri «È fame?».",
-    "Ai risvegli di conforto allatta, e quando succhia leggero stacca piano e rimettilo nel lettino, ancora sonnolento. Se cerca il seno, riattaccalo per un attimo e riprova dopo un minuto.",
+    "Ai risvegli di conforto allatta. Quando ha già fatto i sorsi lunghi e ora succhia solo leggero, staccalo piano dal seno e rimettilo nel lettino, sonnolento ma ancora sveglio. Se cerca di nuovo il seno, riattaccalo: riprovi al prossimo risveglio.",
     "Ai risvegli di conforto, prima del seno, le braccia: fermo o cullato, con il suono. Se si calma, nel lettino. Se piange forte o cerca il seno, allatta.",
-    "Come ieri. Se qualcuno ti dà il cambio, ai risvegli di conforto va prima lui o lei, con braccia e suono. Se il bimbo ha fame, ti chiama.",
+    "Come ieri. Se qualcuno ti dà il cambio, ai risvegli di conforto va prima lui o lei, con braccia e suono. Se è fame, ti viene a chiamare.",
     "Prima delle braccia, la mano: mano sul pancino e la frase della nanna. Se non basta, in braccio. Se non basta, il seno.",
     "Come ieri, a ogni risveglio di conforto. Se una notte va storta, torna alla notte 3: non è una gara.",
     "La scala di ogni notte: un minuto, il suono, la mano, le braccia, il seno. Il seno c'è sempre, solo non è più il primo passo."
@@ -127,28 +127,29 @@
     ],
     "no": [
      "Appena attaccato si calma e in un minuto o due dorme.",
-     "Succhia leggero, a colpetti, quasi senza deglutire.",
+     "Dopo i primi sorsi lunghi, succhia solo leggero, a colpetti, quasi senza deglutire.",
      "Si sveglia quando lo stacchi, anche se ha mangiato da poco."
     ],
-    "regola": "Nel dubbio è fame: allatta. Questo piano cambia solo i risvegli di conforto."
+    "regola": "Nel dubbio è fame: allatta. Anche dare il seno per conforto va bene: questo piano è solo un'altra strada per i risvegli di conforto, se vuoi provarla."
    },
    "passi": [
     {"titolo": "Prima l'SOS", "testo": "Un minuto di attesa e il suono di sempre. A volte basta questo."},
     {"titolo": "La mano e la voce", "testo": "Mano sul pancino e la frase della nanna, piano, senza prenderlo in braccio."},
     {"titolo": "Le braccia", "testo": "Se non basta, prendilo in braccio, fermo o cullato, con il suono, finché si calma. Poi nel lettino, ancora sonnolento."},
-    {"titolo": "Chi ti dà il cambio", "testo": "Se c'è il papà o chi ti aiuta, la mano e le braccia può farle lui o lei: il seno non c'è, e spesso lo cerca meno. Se il bimbo ha fame, ti chiama."},
-    {"titolo": "Il seno, sempre", "testo": "Se piange forte o cerca il seno, allatta: va bene, non è un passo indietro. Quando succhia leggero, stacca piano e rimettilo nel lettino."}
+    {"titolo": "Chi ti dà il cambio", "testo": "Se c'è il papà o chi ti aiuta, la mano e le braccia può farle lui o lei. Se è fame, ti viene a chiamare."},
+    {"titolo": "Il seno, sempre", "testo": "Se piange forte o cerca il seno, allatta: va bene, non è un passo indietro. Quando ha fatto i sorsi lunghi e succhia solo leggero, staccalo piano e rimettilo nel lettino."}
    ],
    "sicuro": {
     "titolo": "Allattare di notte, al sicuro",
     "voci": [
-     "Se senti che ti addormenti, non allattare sul divano o in poltrona: è il posto più pericoloso per il bimbo.",
-     "Se pensi di poterti addormentare, meglio allattare nel tuo letto, con cuscini e coperte lontani dal bimbo. Appena ti svegli, rimettilo nella sua culla.",
+     "Se senti che potresti addormentarti, non allattare sul divano o in poltrona: addormentarsi lì con il bimbo è molto pericoloso.",
+     "Se allatti nel tuo letto e senti che potresti addormentarti, prepara prima il letto: niente cuscini, coperte o lenzuola vicino al bimbo. Appena ti svegli, rimettilo nella sua culla.",
+     "Dormire insieme nello stesso letto non è raccomandato, e mai se è nato prematuro o molto piccolo, se hai bevuto alcol o se qualcuno nel letto fuma.",
      "Dopo la poppata, sempre nella sua culla, a pancia in su, con la culla libera.",
-     "Luce bassa e telefono in modalità notte, così la poppata non lo sveglia del tutto."
+     "Luce bassa, voce bassa e telefono in modalità notte."
     ]
    },
-   "notte": "Questo piano non toglie poppate: se ha fame, il latte c'è sempre. Se cresce poco, è malato o il pediatra ti ha detto di allattarlo spesso, allatta a ogni risveglio. Prima di togliere le poppate di notte, senti il pediatra."
+   "notte": "Questo piano non toglie poppate: se ha fame, il latte c'è sempre. Se cresce poco, bagna pochi pannolini, è malato o il pediatra ti ha detto di allattarlo spesso, allatta a ogni risveglio. Se ha la febbre, respira male, non vuole mangiare o piange in modo diverso dal solito, non è un risveglio di conforto: chiama il pediatra o la guardia medica. Prima di ridurre le poppate di notte, senti il pediatra."
   },
   "lettino": {
    "nome": "Nel lettino",
@@ -184,7 +185,7 @@
    "nome": "Diario della Nanna",
    "sotto": "Ogni mattina, cosa cambiare stasera",
    "prezzo": "19,90 €",
-   "testo": "Ogni mattina segni com'è andata la notte con due tocchi, e ti dice cosa cambiare stasera. Dentro anche l'SOS per regressioni, dentini, salti, viaggi e malattie, fino ai 3 anni.",
+   "testo": "Ogni mattina segni com'è andata la notte con due tocchi, e ti dice cosa cambiare stasera. Dentro anche l'SOS per regressioni, dentini, salti di crescita, viaggi e malattie, fino ai 3 anni.",
    "consigli": {
     "facile-poco": "Ottima notte. Stasera non cambiare niente: stesso rituale, stessa ora, stesso suono.",
     "facile-medio": "Si addormenta bene, ma si sveglia. Stasera controlla l'ora: se ha dormito tanto nel pomeriggio, anticipa il risveglio dal pisolino. Al risveglio di notte, prima un minuto di attesa e il suono, poi la mano sul pancino.",
@@ -197,7 +198,7 @@
     "braccio-tanti": "Tanti risvegli e si addormenta solo in braccio. Stasera nessun passo nuovo: rituale completo, suono acceso tutta la notte, e lo appoggi quando è sonnolento."
    },
    "sos": [
-    {"id": "4mesi", "nome": "La regressione dei 4 mesi", "testo": "Verso i 4 mesi il sonno cambia e diventa più leggero: si sveglia di più anche se prima dormiva. Non è un passo indietro. Tieni lo stesso rituale ogni sera e approfitta per metterlo nel lettino più sveglio: è il momento in cui impara ad addormentarsi da solo."},
+    {"id": "4mesi", "nome": "La regressione dei 4 mesi", "testo": "Verso i 4 mesi il sonno cambia e diventa più leggero: si sveglia di più anche se prima dormiva. Non è un passo indietro. Tieni lo stesso rituale ogni sera e approfittane per metterlo nel lettino più sveglio: è il momento in cui impara ad addormentarsi da solo."},
     {"id": "8mesi", "nome": "Gli 8-10 mesi", "testo": "Gattona, si tira su in piedi, cerca te quando esci dalla stanza. Di giorno fagli fare tanta pratica dei movimenti nuovi, così di notte non li prova nel lettino. Se si alza in piedi, aspetta un attimo: spesso si rimette giù da solo."},
     {"id": "18mesi", "nome": "I 18 mesi", "testo": "Vuole decidere, dice di no alla nanna. Dagli piccole scelte nel rituale: quale pigiama, quale libro. La frase della nanna e l'ora restano uguali."},
     {"id": "dentini", "nome": "I dentini", "testo": "Può svegliarsi di più per qualche notte. Consolalo e tieni lo stesso rituale. Per il dolore senti il pediatra. Quando passa, riprendi dal punto del piano in cui eri."},

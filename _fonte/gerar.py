@@ -19,7 +19,7 @@ PASTAS = {
 # checkouts avulsos dos pacotes, abertos pelo cadeado dentro do app (Hotmart em euro; sem ?checkoutMode=10 o banner some)
 CHECKOUT = {k: f'https://pay.hotmart.com/{c}?checkoutMode=10' for k, c in
             {'seno': 'R108290415K', 'lettino': 'O108290587G', 'orologio': 'W108290592I', 'consulente': 'F108290595O'}.items()}
-VERSAO = 4
+VERSAO = 5
 
 c = json.load(open(os.path.join(AQUI, 'conteudo', 'conteudo.json'), encoding='utf-8'))
 c.pop('_nota', None)

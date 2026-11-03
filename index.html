@@ -149,6 +149,7 @@ function eta() {
   return E.mesi + Math.max(0, (b.getFullYear() - a.getFullYear()) * 12 + b.getMonth() - a.getMonth() - (b.getDate() < a.getDate() ? 1 : 0));
 }
 const piccolo = () => (eta() ?? 6) < 4;
+const senoPiccolo = () => (eta() ?? 6) < 6; /* Nanna senza seno: sotto i 6 mesi le poppate di notte sono la regola (NHS, UNICEF BFI) */
 const bimbo = () => E.nome || 'il tuo bimbo';
 const fm = m => m < 60 ? m + ' min' : Math.floor(m / 60) + 'h' + (m % 60 ? String(m % 60).padStart(2, '0') : '');
 const mmss = s => Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
@@ -267,10 +268,10 @@ function telaHome() {
   <button class="extra" data-a="ir" data-t="guida"><span class="ic">${IC('rituale')}</span><span><b>Guida rapida per cominciare</b><small>Da dove partire e cosa aprire dopo</small></span><span class="fim">${I.dir}</span></button>
   <button class="extra" data-a="ir" data-t="scheda"><span class="ic">${IC('piano')}</span><span><b>La vostra scheda della sera</b><small>La routine da tenere a portata di mano</small></span><span class="fim">${I.dir}</span></button>
   ${instalarBloco()}
-  <h2 style="margin-top:26px">Per le notti che vengono</h2>
+  <h2 style="margin-top:26px">Per le prossime notti</h2>
   ${['seno', 'lettino', 'orologio', 'consulente'].map(extra).join('')}
   ${stanzaOk ? `<button class="extra" data-a="ir" data-t="stanza"><span class="ic">${IC('luce')}</span><span><b>La stanza</b><small>Luce, temperatura, culla</small></span><span class="fim">${I.dir}</span></button>` : ''}
-  <button class="extra" data-a="ir" data-t="profilo"><span class="ic">${IC('schiena')}</span><span><b>${bimbo() === 'il tuo bimbo' ? 'Il tuo bimbo' : E.nome}</b><small>${eta() ?? '?'} mesi · cambia età o partenza</small></span><span class="fim">${I.dir}</span></button>
+  <button class="extra" data-a="ir" data-t="profilo"><span class="ic">${IC('schiena')}</span><span><b>${bimbo() === 'il tuo bimbo' ? 'Il tuo bimbo' : E.nome}</b><small>${eta() ?? '?'} mesi · cambia età o punto di partenza</small></span><span class="fim">${I.dir}</span></button>
   <p class="rodape">Nanna Subito non sostituisce il pediatra.</p>`;
 }
 
@@ -336,8 +337,8 @@ function telaPacchetto(id) {
   if (!tem(id)) return telaHome();
   if (id === 'seno') {
     /* a madrugada: "Stanotte" e três telas de apoio (È fame?, Quando non è fame, Allattare di notte al sicuro).
-       Abaixo de 4 meses só a mensagem piccoli e a tela do sono seguro, que vale em qualquer idade. */
-    const t = k.titoli, sub = piccolo() && T.sub !== 'sicuro' ? null : T.sub;
+       Abaixo de 6 meses só a mensagem piccoli e a tela do sono seguro, que vale em qualquer idade. */
+    const t = k.titoli, sub = senoPiccolo() && T.sub !== 'sicuro' ? null : T.sub;
     const ir_ = s => `<button class="extra" data-a="seno-sub" data-s="${s}"><span><b>${t[s]}</b></span><span class="fim">${I.dir}</span></button>`;
     const voltarSeno = `<div class="topo"><button class="voltar" data-a="pacchetto" data-p="seno">${I.esq}Indietro</button>${toggleNotte()}</div>`;
     if (sub === 'fame') {
@@ -356,7 +357,7 @@ function telaPacchetto(id) {
       return `${voltarSeno}<h1>${k.sicuro.titolo}</h1>
       <ul class="passos">${k.sicuro.voci.map((v, j) => `<li><b>${j + 1}</b><span>${v}</span></li>`).join('')}</ul>`;
     }
-    if (piccolo()) {
+    if (senoPiccolo()) {
       return `<div class="topo">${voltar()}${toggleNotte()}</div><h1>${k.nome}</h1><p class="suave">${k.sotto}</p>
       <div class="cartao"><p>${k.piccoli}</p></div>${ir_('sicuro')}`;
     }
@@ -401,10 +402,10 @@ function telaGuida() {
   <div class="guida-passo"><b>1. Prima di cominciare</b><p>Apri la preparazione della stanza e controlla le voci. Ritrovi qui anche le indicazioni di utilizzo.</p><button class="btn sec" data-a="ir" data-t="stanza">Prepara la stanza</button></div>
   <div class="guida-passo"><b>2. Quando è ora della nanna</b><p>Avvia il rituale: una schermata alla volta. Alla fine puoi scegliere uno dei sei suoni.</p><button class="btn sec" data-a="rituale">Apri il rituale</button></div>
   <div class="guida-passo"><b>3. Se si sveglia</b><p>Apri l’SOS per ritrovare le indicazioni, senza cercare tra tutte le sezioni.</p><button class="btn sec" data-a="ir" data-t="sos">Apri SOS 3:00</button></div>
-  <div class="guida-passo"><b>4. Le sere successive</b><p>${piccolo() ? 'Nei primi quattro mesi continua con i contenuti dedicati ai più piccoli. Il percorso si apre dai quattro mesi.' : 'Apri il percorso dal punto di partenza scelto. Puoi ripetere una tappa prima di proseguire: sette tappe non sono una scadenza.'}</p>${piccolo() ? '' : '<button class="btn sec" data-a="ir" data-t="piano">Apri il percorso</button>'}</div>
-  <div class="guida-passo"><b>Dividi la routine con qualcuno?</b><p>Compila la scheda della sera con le vostre abitudini e i promemoria utili.</p><button class="btn linha" data-a="ir" data-t="scheda">Prepara la vostra scheda</button></div>`;
+  <div class="guida-passo"><b>4. Le sere successive</b><p>${piccolo() ? 'Nei primi quattro mesi continua con i contenuti dedicati ai più piccoli. Il piano si apre dai quattro mesi.' : 'Apri il piano dal punto di partenza che hai scelto. Puoi ripetere una notte tutte le volte che serve: non c’è fretta.'}</p>${piccolo() ? '' : '<button class="btn sec" data-a="ir" data-t="piano">Apri il piano</button>'}</div>
+  <div class="guida-passo"><b>Qualcuno ti dà il cambio?</b><p>Compila la scheda della sera con le vostre abitudini e i promemoria utili.</p><button class="btn linha" data-a="ir" data-t="scheda">Prepara la vostra scheda</button></div>`;
 }
-const schedaCampi = [['rituale','Il nostro rituale','La sequenza che vogliamo ritrovare stasera'],['punto','Il punto a cui siamo arrivati','Il passaggio del percorso o la sezione che stiamo usando'],['ricordare','Da ricordare a chi mi dà una mano','Abitudini, preferenze e cose utili da sapere']];
+const schedaCampi = [['rituale','Il nostro rituale','La sequenza che vogliamo ritrovare stasera'],['punto','Il punto a cui siamo arrivati','La notte del piano o la sezione che stiamo usando'],['ricordare','Da ricordare a chi mi dà una mano','Abitudini, preferenze e cose utili da sapere']];
 const testoSicuro = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function telaScheda() {
   const dati = LS.ler('ns_scheda', {});
@@ -421,14 +422,14 @@ function telaProfilo() {
   <label style="display:block;margin-top:14px"><b>Mesi</b><select id="mesi" style="margin-top:8px">${Array.from({ length: 25 }, (_, i) => `<option value="${i}"${eta() === i ? ' selected' : ''}>${i === 0 ? 'Meno di 1 mese' : i + (i === 1 ? ' mese' : ' mesi')}</option>`).join('')}</select></label>
   <label style="display:block;margin-top:14px"><b>Come si addormenta adesso</b><select id="partenza" style="margin-top:8px">${Object.entries(C.piano.partenze).map(([k, v]) => `<option value="${k}"${E.partenza === k ? ' selected' : ''}>${v}</option>`).join('')}</select></label></div>
   <button class="btn prim" data-a="salva-profilo">Salva</button>
-  <p class="suave pq" style="margin-top:12px">Se cambi la partenza, il piano ricomincia dalla notte 1.</p>`;
+  <p class="suave pq" style="margin-top:12px">Se cambi il punto di partenza, il piano ricomincia dalla notte 1.</p>`;
 }
 
 function folhaCadeado(id) {
   const k = PAC[id], f = document.createElement('div');
   f.className = 'folha-fundo';
   f.innerHTML = `<div class="folha"><span class="cadeado">${k.prezzo} · pagamento unico</span><h2 style="margin-top:12px">${k.nome}</h2><p>${k.testo}</p>
-  <a class="btn prim" href="${CHECKOUT[id]}">Sbloccalo a ${k.prezzo}</a><button class="btn linha" data-a="fecha">Non ora</button></div>`;
+  <a class="btn prim" href="${CHECKOUT[id]}">Sblocca per ${k.prezzo}</a><button class="btn linha" data-a="fecha">Non ora</button></div>`;
   f.addEventListener('click', e => { if (e.target === f || e.target.closest('[data-a="fecha"]')) f.remove(); });
   document.body.appendChild(f);
 }
